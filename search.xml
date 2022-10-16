@@ -1,73 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>工科数学分析 Chap.1 习题 1.4.6</title>
-    <url>/2022/10/16/1.4.6/</url>
-    <content><![CDATA[<h1 id="工科数学分析-chap.1-习题-1.4.6">工科数学分析 Chap.1 习题
-1.4.6</h1>
-<h2 id="description">Description</h2>
-<p>证明下列关系式:</p>
-<p>(1). <span class="math inline">\(\arcsin x=x+o(x),x\to
-0\)</span>;<span class="math inline">\(\quad\)</span>(2). <span
-class="math inline">\(\arctan x=x+o(x)\)</span>;<span
-class="math inline">\(\quad\)</span>(3). <span
-class="math inline">\(\sqrt[n]{1+x}=1+\dfrac{1}{n}x+o(x),x\to
-0\)</span>;</p>
-<p>(4). <span class="math inline">\(\sqrt{1+\tan x}-\sqrt{1+\sin
-x}\sim\dfrac{1}{4}x^3,x\to0\)</span>;<span
-class="math inline">\(\quad\)</span>(5). <span
-class="math inline">\(\sqrt{x+\sqrt{1+\sqrt{x}}}\sim\sqrt{x},x\to+\infty\)</span>;<span
-class="math inline">\(\quad\)</span>(6). <span
-class="math inline">\(1+\cos\pi x\sim\dfrac{\pi^2}{2}(x-1)^2,x\to
-1\)</span>.</p>
-<span id="more"></span>
-<h2 id="solution">Solution</h2>
-<p>(1).</p>
-<p>已知 <span class="math inline">\(x\to 0\)</span> 时有 <span
-class="math inline">\(\sin x\sim x\)</span>, 令 <span
-class="math inline">\(y=\sin x\)</span>, 则 <span
-class="math inline">\(y\to 0\)</span>, 且 <span
-class="math inline">\(\arcsin y=x\sim y\)</span>. 即当 <span
-class="math inline">\(x\to 0\)</span> 时, <span
-class="math inline">\(\arcsin x\)</span> 和 <span
-class="math inline">\(x\)</span> 是等价无穷小, 于是由书中定理 4.4 即得
-<span class="math inline">\(\arcsin x = x+o(x)\)</span>.</p>
-<p>(2).</p>
-<p>已知 <span class="math inline">\(x\to 0\)</span> 时有 <span
-class="math inline">\(\tan x\sim x\)</span>, 与 (1) 类似地有 <span
-class="math inline">\(\arctan x\sim x\)</span>, 于是有 <span
-class="math inline">\(\arctan x=x+o(x)\)</span>.</p>
-<p>(3). <span class="math display">\[
-\sqrt[n]{1+x}-1=\dfrac{x}{(1+x)^\frac{n-1}{n}+(1+x)^{\frac{n-2}{n}}+\cdots+1}
-\]</span> 于是有 <span class="math display">\[
-\lim_{x\to 0}\sqrt[n]{1+x}-1=\dfrac{1}{n}x
-\]</span> 即 <span class="math display">\[
-\sqrt{1+x}= \dfrac{1}{n}x+1+o(x)
-\]</span></p>
-<p>(4). <span class="math display">\[
-\begin{aligned}
-\lim_{x\to 0}\sqrt{1+\tan x}-\sqrt{1+\sin x}&amp;=\lim_{x\to
-0}1+\dfrac{1}{2}\tan x-1-\dfrac{1}{2}\sin x+o(\tan x)+o(\sin x)\\
-&amp;=\lim_{x\to 0}\dfrac{1}{2}(\tan x-\sin x)+o(\tan x)+o(\sin x)\\
-&amp;=\lim_{x\to 0}\dfrac{1}{2}\sin x\left(\dfrac{1}{\cos
-x}-1\right)+o(\tan x)+o(\sin x)\\
-&amp;=\lim_{x\to 0}\dfrac{1}{2}x(1-\cos x)+o(x)\\
-&amp;=\dfrac{1}{4}x^3+o(x)
-\end{aligned}
-\]</span> 因而 <span class="math inline">\(\sqrt{1+\tan x}-\sqrt{1+\sin
-x}\sim \dfrac{1}{4}x^3,x\to 0\)</span>.</p>
-<p>(5). <span class="math display">\[
-\lim_{x\to+\infty}\dfrac{\sqrt{x+\sqrt{1+\sqrt{x}}}}{\sqrt{x}}=\sqrt{1+\sqrt{\dfrac{1+\sqrt
-x}{x}}}=\sqrt{1+x^{-\frac{1}{4}}}=1
-\]</span> 因此 <span
-class="math inline">\(\sqrt{x+\sqrt{1+\sqrt{x}}}\sim\sqrt{x},x\to+\infty\)</span>.</p>
-<p>(6).令 <span class="math inline">\(t=x-1\)</span>, 则原式为 <span
-class="math display">\[
-1+\cos(\pi t-\pi)=1-\cos \pi t\sim \dfrac{\pi^2}{2}t^2,t\to 0
-\]</span></p>
-]]></content>
-  </entry>
-  <entry>
     <title>工科数学分析 Chap 1. 习题 1.4.4</title>
     <url>/2022/10/16/1.4.4/</url>
     <content><![CDATA[<h2 id="description">Description</h2>
@@ -120,5 +53,69 @@ x}=\lim_{x\to 0}\dfrac{\frac{1}{2}x^2}{x}=\frac{1}{2}x
       <tags>
         <tag>工科数学分析习题解</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>工科数学分析 Chap.1 习题 1.4.6</title>
+    <url>/2022/10/16/1.4.6/</url>
+    <content><![CDATA[<h1 id="工科数学分析-chap.1-习题-1.4.6">工科数学分析 Chap.1 习题
+1.4.6</h1>
+<h2 id="description">Description</h2>
+<p>证明下列关系式:</p>
+<p>(1). <span class="math inline">\(\arcsin x=x+o(x),x\to 0\)</span>;
+(2). <span class="math inline">\(\arctan x=x+o(x)\)</span>; (3). <span
+class="math inline">\(\sqrt[n]{1+x}=1+\dfrac{1}{n}x+o(x),x\to
+0\)</span>;</p>
+<p>(4). <span class="math inline">\(\sqrt{1+\tan x}-\sqrt{1+\sin
+x}\sim\dfrac{1}{4}x^3,x\to0\)</span>; (5). <span
+class="math inline">\(\sqrt{x+\sqrt{1+\sqrt{x}}}\sim\sqrt{x},x\to+\infty\)</span>;<span
+class="math inline">\(\quad\)</span>(6). <span
+class="math inline">\(1+\cos\pi x\sim\dfrac{\pi^2}{2}(x-1)^2,x\to
+1\)</span>.</p>
+<span id="more"></span>
+<h2 id="solution">Solution</h2>
+<p>(1).</p>
+<p>已知 <span class="math inline">\(x\to 0\)</span> 时有 <span
+class="math inline">\(\sin x\sim x\)</span>, 令 <span
+class="math inline">\(y=\sin x\)</span>, 则 <span
+class="math inline">\(y\to 0\)</span>, 且 <span
+class="math inline">\(\arcsin y=x\sim y\)</span>. 即当 <span
+class="math inline">\(x\to 0\)</span> 时, <span
+class="math inline">\(\arcsin x\)</span> 和 <span
+class="math inline">\(x\)</span> 是等价无穷小, 于是由书中定理 4.4 即得
+<span class="math inline">\(\arcsin x = x+o(x)\)</span>.</p>
+<p>(2).</p>
+<p>已知 <span class="math inline">\(x\to 0\)</span> 时有 <span
+class="math inline">\(\tan x\sim x\)</span>, 与 (1) 类似地有 <span
+class="math inline">\(\arctan x\sim x\)</span>, 于是有 <span
+class="math inline">\(\arctan x=x+o(x)\)</span>.</p>
+<p>(3). <span class="math display">\[
+\sqrt[n]{1+x}-1=\dfrac{x}{(1+x)^\frac{n-1}{n}+(1+x)^{\frac{n-2}{n}}+\cdots+1}
+\]</span> 于是有 <span class="math display">\[
+\lim_{x\to 0}\sqrt[n]{1+x}-1=\dfrac{1}{n}x
+\]</span> 即 <span class="math display">\[
+\sqrt{1+x}= \dfrac{1}{n}x+1+o(x)
+\]</span></p>
+<p>(4). <span class="math display">\[
+\begin{aligned}
+\lim_{x\to 0}\sqrt{1+\tan x}-\sqrt{1+\sin x}&amp;=\lim_{x\to
+0}1+\dfrac{1}{2}\tan x-1-\dfrac{1}{2}\sin x+o(\tan x)+o(\sin x)\\
+&amp;=\lim_{x\to 0}\dfrac{1}{2}(\tan x-\sin x)+o(\tan x)+o(\sin x)\\
+&amp;=\lim_{x\to 0}\dfrac{1}{2}\sin x\left(\dfrac{1}{\cos
+x}-1\right)+o(\tan x)+o(\sin x)\\
+&amp;=\lim_{x\to 0}\dfrac{1}{2}x(1-\cos x)+o(x)\\
+&amp;=\dfrac{1}{4}x^3+o(x)
+\end{aligned}
+\]</span> 因而 <span class="math inline">\(\sqrt{1+\tan x}-\sqrt{1+\sin
+x}\sim \dfrac{1}{4}x^3,x\to 0\)</span>.</p>
+<p>(5). <span class="math display">\[
+\lim_{x\to+\infty}\dfrac{\sqrt{x+\sqrt{1+\sqrt{x}}}}{\sqrt{x}}=\sqrt{1+\sqrt{\dfrac{1+\sqrt
+x}{x}}}=\sqrt{1+x^{-\frac{1}{4}}}=1
+\]</span> 因此 <span
+class="math inline">\(\sqrt{x+\sqrt{1+\sqrt{x}}}\sim\sqrt{x},x\to+\infty\)</span>.</p>
+<p>(6).令 <span class="math inline">\(t=x-1\)</span>, 则原式为 <span
+class="math display">\[
+1+\cos(\pi t-\pi)=1-\cos \pi t\sim \dfrac{\pi^2}{2}t^2,t\to 0
+\]</span></p>
+]]></content>
   </entry>
 </search>
