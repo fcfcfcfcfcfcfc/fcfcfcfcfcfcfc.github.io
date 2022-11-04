@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Part of Exercise in Chap.3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linear Algebra Assignment Chap.3">
+<meta property="og:url" content="http://example.com/2022/10/18/LA_C3_As/index.html">
+<meta property="og:site_name" content="feicheng 的记事本">
+<meta property="og:description" content="Part of Exercise in Chap.3">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-10-18T06:18:35.469Z">
+<meta property="article:modified_time" content="2022-11-03T00:49:15.127Z">
+<meta property="article:author" content="feicheng">
+<meta property="article:tag" content="Vectors">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2022/10/18/LA_C3_As/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Linear Algebra Assignment Chap.3 | feicheng 的记事本</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">feicheng 的记事本</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">A notebook which records everything in my life.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/18/LA_C3_As/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="feicheng">
+      <meta itemprop="description" content="The best people in life are free">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="feicheng 的记事本">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linear Algebra Assignment Chap.3
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-10-18 14:18:35" itemprop="dateCreated datePublished" datetime="2022-10-18T14:18:35+08:00">2022-10-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-11-03 08:49:15" itemprop="dateModified" datetime="2022-11-03T08:49:15+08:00">2022-11-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linear-Algebra/" itemprop="url" rel="index"><span itemprop="name">Linear Algebra</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">Part of Exercise in Chap.3</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="exercise-3.1.6">Exercise 3.1.6</h3>
+<p>向量 <span class="math inline">\(a=i+2j-2k\)</span> 是单位向量吗?
+如果不是, 求与 <span class="math inline">\(a\)</span>
+同方向的单位向量.</p>
+<h4 id="solution">Solution</h4>
+<p>因为 <span class="math inline">\(a=(1,2,-2)\)</span>, 于是 <span
+class="math inline">\(\Vert{a}\Vert=3\neq 1\)</span>, 即 <span
+class="math inline">\(a\)</span> 不是单位向量, 且与 <span
+class="math inline">\(a\)</span> 同方向的单位向量为 <span
+class="math inline">\(a^\circ=\left(\dfrac{1}{3},\dfrac23,-\dfrac{2}{3}\right)\)</span>.</p>
+<h3 id="exercise-3.1.8">Exercise 3.1.8</h3>
+<p>已知向量 <span class="math inline">\(a\)</span>
+的三个方向角相等且都为锐角, 求 <span class="math inline">\(a\)</span>
+的方向余弦. 若 <span class="math inline">\(\|a\|=2\)</span>, 求 <span
+class="math inline">\(a\)</span> 的坐标.</p>
+<h4 id="solution-1">Solution</h4>
+<p>由题意可得, 设 <span class="math inline">\(a\)</span> 的方向角大小为
+<span class="math inline">\(\theta\)</span>, 则 <span
+class="math display">\[
+3\cos^2\theta=1
+\]</span> 即 <span class="math inline">\(\cos
+\theta=\dfrac{\sqrt3}{3}\)</span>.</p>
+<p>若 <span class="math inline">\(\|a\|=2\)</span>, 则 <span
+class="math inline">\(a\)</span> 的坐标为 <span
+class="math inline">\(\left(\dfrac{2\sqrt{3}}{3},\dfrac{2\sqrt{3}}{3},\dfrac{2\sqrt{3}}{3}\right)\)</span>.</p>
+<h3 id="exercise-3.1.10">Exercise 3.1.10</h3>
+<p>已知向量 <span class="math inline">\(a=(-2,3,x)\)</span> 与向量 <span
+class="math inline">\((y,-6,2)\)</span> 共线, 求 <span
+class="math inline">\(x,y\)</span> 的值.</p>
+<h4 id="solution-2">Solution</h4>
+<p>因为 <span class="math inline">\(a,b\)</span> 共线, 于是 <span
+class="math inline">\(\dfrac{-2}{y}=\dfrac{3}{-6}=\dfrac{x}{2}\)</span>.
+解得 <span class="math inline">\(x=-1,y=4\)</span>.</p>
+<h3 id="exercise-3.1.11">Exercise 3.1.11</h3>
+<p>已知三个力 <span
+class="math inline">\(F_1=(1,2,3),F_2(-2,3,-4),F_3(3,-4,-1)\)</span>
+作用于一点, 求其合力 <span class="math inline">\(F\)</span>
+的大小与方向.</p>
+<h4 id="solution-3">Solution</h4>
+<p><span class="math inline">\(F=F_1+F_2+F_3=(2,1,-2)\)</span>. 则 <span
+class="math inline">\(\|F\|=3\)</span>, 且 <span
+class="math inline">\(F\)</span> 的方向角为 <span
+class="math display">\[
+\alpha=\arccos \dfrac{2}{3},\beta=\arccos
+\dfrac{1}{3},\gamma=\arccos\left(\dfrac{-2}{3}\right).
+\]</span></p>
+<h3 id="exercise-3.1.12">Exercise 3.1.12</h3>
+<p>已知点 <span class="math inline">\(P(1,2,3)\)</span>, <span
+class="math inline">\(Q(2,3,4)\)</span>, 求向量 <span
+class="math inline">\(\mathbf{PQ}\)</span> 的模与方向余弦.</p>
+<h4 id="solution-4">Solution</h4>
+<p>因为向量 <span
+class="math inline">\(\overrightarrow{PQ}=(1,1,1)\)</span>. 故 <span
+class="math inline">\(\Vert\overrightarrow{PQ}\Vert=\sqrt{3}\)</span>,
+其方向余弦为 <span
+class="math inline">\(\dfrac{\sqrt3}{3},\dfrac{\sqrt3}{3},\dfrac{\sqrt3}{3}\)</span>.</p>
+<h3 id="exercise-3.1.16">Exercise 3.1.16</h3>
+<p>把向量 <span class="math inline">\(a=(-7,4,7)\)</span>
+表示为不共面向量 <span class="math inline">\(e_1=(3,2,1)\)</span>, <span
+class="math inline">\(e_2=(7,5,0)\)</span>, <span
+class="math inline">\(e_3=(-2,3,4)\)</span> 的分解式.</p>
+<h4 id="solution-5">Solution</h4>
+<p>设 <span class="math inline">\(a=k_1e_1+k_2e_2+k_3e_3\)</span>,
+则解得 <span class="math inline">\(k_1=-1,k_2=0.k_3=2\)</span>. 即 <span
+class="math inline">\(a=-e_1+2e_3\)</span>.</p>
+<h3 id="exercise-3.1.18">Exercise 3.1.18</h3>
+<p>设点 <span class="math inline">\(A(1,1,1), B(1,2,0)\)</span>, 点
+<span class="math inline">\(P\)</span> 把线段 <span
+class="math inline">\(AB\)</span> 分成两段的比为 <span
+class="math inline">\(2:1\)</span>, 求点 <span
+class="math inline">\(P\)</span> 的坐标.</p>
+<h4 id="solution-6">Solution</h4>
+<p>由题意可知 <span class="math inline">\(\dfrac{AP}{BP}=2\)</span>, 则
+<span
+class="math inline">\(P=\left(1,\dfrac{5}{3},\dfrac{1}{3}\right)\)</span>.</p>
+<h3 id="exercise-3.2.2">Exercise 3.2.2</h3>
+<p>设向量 <span class="math inline">\(b\)</span> 与 <span
+class="math inline">\(a=2i-j+2k\)</span> 共线, 且 <span
+class="math inline">\(a\cdot b=-18\)</span>, 求向量 <span
+class="math inline">\(b\)</span>.</p>
+<h4 id="solution-7">Solution</h4>
+<p>因为 <span class="math inline">\(a\)</span> 与 <span
+class="math inline">\(b\)</span> 共线, 于是 <span
+class="math inline">\(a\cdot b=\|a\|\cdot \|b\|=18\)</span>. 解得 <span
+class="math inline">\(b=-4i+2j-4k\)</span>.</p>
+<h3 id="exercise-3.2.3">Exercise 3.2.3</h3>
+<p>已知 <span class="math inline">\(\|a\|=4\)</span>,<span
+class="math inline">\(\|b\|=2\)</span>,<span
+class="math inline">\(\|a-b\|=2\sqrt{7}\)</span>, 求 <span
+class="math inline">\(a\)</span> 与 <span
+class="math inline">\(b\)</span> 的夹角.</p>
+<h4 id="solution-8">Solution</h4>
+<p>由余弦定理可知 <span class="math display">\[
+\cos(a,b)=\dfrac{\Vert a^2\Vert|+\Vert
+b\Vert^2-\|a-b\|^2}{2\|a\|\|b\|}=-\dfrac{1}{2}
+\]</span> 即 <span class="math inline">\(a,b\)</span> 之间的夹角为 <span
+class="math inline">\(\dfrac{2}{3}\pi\)</span>.</p>
+<h3 id="exercise-3.2.7">Exercise 3.2.7</h3>
+<p>设 <span class="math inline">\((a+3b)\perp(7a-5b)\)</span>, <span
+class="math inline">\((a-4b)\perp(7a-2b)\)</span>, 求 <span
+class="math inline">\(a\)</span> 与 <span
+class="math inline">\(b\)</span> 之间的夹角.</p>
+<h4 id="solution-9">Solution</h4>
+<p>由题意有 <span class="math display">\[
+\begin{aligned}
+7a^2+16ab-15b^2=0 \ (1)\\
+7a^2-30ab+8b^2=0 \ (2)
+\end{aligned}
+\]</span> <span class="math inline">\((1)+(2)\)</span> 可得 <span
+class="math inline">\(\|a\|=\|b\|\)</span>, <span
+class="math inline">\((1)-(2)\)</span> 可得 <span
+class="math inline">\(\cos(a,b)=\dfrac{\|b\|}{2\|a\|}\)</span>. 于是有
+<span class="math inline">\(\cos(a,b)=\dfrac{1}{2}\)</span>, 即夹角为
+<span class="math inline">\(\dfrac{1}{3}\pi\)</span>.</p>
+<h3 id="exercise-3.2.8">Exercise 3.2.8</h3>
+<p>设向量 <span class="math inline">\(a=(1,1,-4),b=(1,-2,2)\)</span>. 求
+<span class="math inline">\(a\)</span> 在 <span
+class="math inline">\(b\)</span> 上的射影以及 <span
+class="math inline">\(a\)</span> 在 <span
+class="math inline">\(b\)</span> 上的射影向量.</p>
+<h4 id="solution-10">Solution</h4>
+<p><span class="math inline">\(a,b\)</span> 之间夹角的余弦值 <span
+class="math inline">\(\cos\theta=\dfrac{ab}{\|a\|\|b\|}\)</span>, 于是
+<span class="math inline">\(a\)</span> 在 <span
+class="math inline">\(b\)</span> 上的射影 <span
+class="math inline">\((a)_b=\|a\|\cos\theta=\dfrac{ab}{\|b\|}=-3\)</span>,
+且 <span class="math inline">\(\mathrm{Proj}_ba=(-1,2,-2)\)</span>.</p>
+<h3 id="exercise-3.2.11">Exercise 3.2.11</h3>
+<p>设单位向量 <span class="math inline">\(a,b,c\)</span> 满足 <span
+class="math inline">\(a+b+c=0\)</span>. 求 <span
+class="math inline">\(a\cdot b+b\cdot c+c\cdot a\)</span>.</p>
+<h4 id="solution-11">Solution</h4>
+<p>因为 <span class="math inline">\((a+b+c)\cdot(a+b+c)=0\)</span>,
+于是有 <span class="math inline">\(a^2+b^2+c^2+2P=0\)</span>, 其中 <span
+class="math inline">\(P=a\cdot b+b\cdot c+c\cdot a\)</span>. 解得 <span
+class="math inline">\(P=-\dfrac{3}{2}\)</span></p>
+<h3 id="exercise-3.2.13">Exercise 3.2.13</h3>
+<p>若 <span class="math inline">\(a\times b=c\times d\)</span> 且 <span
+class="math inline">\(a\times c=b\times d\)</span>, 证明: <span
+class="math inline">\(a-d\)</span> 和 <span
+class="math inline">\(b-c\)</span> 共线.</p>
+<h4 id="solution-12">Solution</h4>
+<p>原题即证明 <span class="math inline">\((a-d)\times(b-c)=0\)</span>.
+因为 <span class="math display">\[
+(a-d)\times(b-c)=a\times b+b\times d-a\times c-c\times d
+\]</span> 而 <span class="math inline">\(a\times b=c\times d,a\times
+c=b\times d\)</span>. 故 <span class="math inline">\((a-d)\times
+(b-c)=0\)</span>.</p>
+<h3 id="exercise-3.2.14">Exercise 3.2.14</h3>
+<p>设一个四面体 <span class="math inline">\(\Omega\)</span> 的顶点为
+<span class="math inline">\(A,B,C,D\)</span>. 向量 <span
+class="math inline">\(u,v,w,r\)</span> 分别垂直于 <span
+class="math inline">\(\Omega\)</span> 的四个表面, 且都指向 <span
+class="math inline">\(\Omega\)</span> 的外部,
+其大小分别等于其对应的表面的面积. 证明: <span
+class="math inline">\(u+v+w+r=0\)</span>.</p>
+<h4 id="solution-13">Solution</h4>
+<p>不妨设 <span class="math inline">\(u\)</span> 对应平面 <span
+class="math inline">\(\triangle ABC\)</span>, <span
+class="math inline">\(v\)</span> 对应 平面 <span
+class="math inline">\(\triangle ABD\)</span>, <span
+class="math inline">\(w\)</span> 对应平面 <span
+class="math inline">\(\triangle ACD\)</span>, <span
+class="math inline">\(r\)</span> 对应平面 <span
+class="math inline">\(\triangle BCD\)</span>. 则有 <span
+class="math display">\[
+u+v+w+r=\dfrac{1}{2}(\overrightarrow{AC}\times\overrightarrow{AD}+\overrightarrow{AB}\times\overrightarrow{AC}+\overrightarrow{AD}\times\overrightarrow{AB}+\overrightarrow{CD}\times\overrightarrow{BD})
+\]</span> 根据直积的运算规律及四面体的性质化简得 <span
+class="math inline">\(u+v+w+r=0\)</span>.</p>
+<h3 id="exercise-3.2.18">Exercise 3.2.18</h3>
+<p>求以 <span
+class="math inline">\(A(3,0,0),B(0,3,0),C(0,0,2),D(4,5,6)\)</span>
+为顶点的四面体的体积.</p>
+<h4 id="solution-14">Solution</h4>
+<p>设其体积为 <span class="math inline">\(V\)</span>, 则 <span
+class="math display">\[
+V=\left|\dfrac{1}{6}[\overrightarrow{AB}\ \  \ \overrightarrow{AC} \ \ \
+\overrightarrow{AD}]\right|=15
+\]</span></p>
+<h3 id="exercise-1">Exercise 1</h3>
+<p>求满足下列条件的平面的方程:</p>
+<ol type="1">
+<li>过直线 <span
+class="math inline">\(L_1:x-1=\dfrac{y-2}{0}=3-z\)</span>, 且与 <span
+class="math inline">\(L_2:\dfrac{x+2}{2}=y-1=z\)</span> 平行.</li>
+<li>平行于平面 <span
+class="math inline">\(\pi_1:5x-14y+2z+36=0\)</span>, 且与此平面的距离为
+<span class="math inline">\(3\)</span>.</li>
+<li>过点 <span class="math inline">\((2,-1,5)\)</span>, 与直线 <span
+class="math inline">\(L_1:\left\{\begin{aligned}4x+y+2z=3\\5x+2y+3z=2\end{aligned}\right.\)</span>
+平行, 且与平面 <span class="math inline">\(\pi_1:2x-y+z=1\)</span>
+垂直.</li>
+<li>过点 <span class="math inline">\((2,1,3)\)</span> 及直线 <span
+class="math inline">\(\dfrac{x}{2}=\dfrac{y+1}{3}=\dfrac{z-3}{2}\)</span>.</li>
+<li>过点 <span class="math inline">\((3,4,-2)\)</span> 且垂直于两平面
+<span class="math inline">\(2x-4y-3z+5=0\)</span> 与 <span
+class="math inline">\(3x-3y-4z+11=0\)</span> 的交线.</li>
+</ol>
+<h4 id="solution-15">Solution</h4>
+<p>本题中均设所求平面为 <span class="math inline">\(\pi\)</span>,
+且平面的法向量为 <span
+class="math inline">\(\mathbf{n}=(A,B,C)\)</span>.</p>
+<ol type="1">
+<li>由题意可得 <span class="math inline">\(\mathbf{n}\perp
+\mathbf{a_1},\mathbf{n}\perp \mathbf{a_2}\)</span>, 解得 <span
+class="math inline">\(A=C=-\dfrac{1}{3}B\)</span>. 又 <span
+class="math inline">\(L_1\)</span> 在 <span
+class="math inline">\(\pi\)</span> 上, 有 <span
+class="math inline">\(A+2B+3C+D=0\)</span>, 解得 <span
+class="math inline">\(D=2A\)</span>. 于是有 <span
+class="math inline">\(\pi:x-3y+z+2=0\)</span>.</li>
+<li>因为 <span class="math inline">\(\pi\parallel \pi_1\)</span>, 于是设
+<span class="math inline">\(\pi:5x-14y+2z+D=0\)</span>, 因为 <span
+class="math inline">\(P=(0,0,-18)\in\pi_1\)</span>, 于是有</li>
+</ol>
+<p><span class="math display">\[
+d=\dfrac{|-36+D|}{\sqrt{A^2+B^2+C^2}}=\dfrac{|-36+D|}{15}=3
+\]</span></p>
+<p>解得 <span class="math inline">\(D=81\)</span> 或 <span
+class="math inline">\(D=-9\)</span>.</p>
+<ol start="3" type="1">
+<li>因为 <span class="math inline">\(\pi\)</span> 与 <span
+class="math inline">\(L_1\)</span> 平行, 有 <span
+class="math inline">\(-A+3B+3C=0\)</span>, 又 <span
+class="math inline">\(\pi\perp \pi_1\)</span>, 于是有 <span
+class="math inline">\(\mathbf{n}\perp \mathbf{n}_1\)</span>, 解得 <span
+class="math inline">\(2A-B+C=0\)</span>. 因为点 <span
+class="math inline">\((2,-1,5)\)</span> 在平面 <span
+class="math inline">\(\pi\)</span> 上, 于是直线 <span
+class="math inline">\(L_2:\dfrac{x-2}{-1}=\dfrac{y+1}{3}=\dfrac{z-5}{3}\)</span>
+在 <span class="math inline">\(\pi\)</span> 上, 解得 <span
+class="math inline">\(\pi:x+7y+5z-20=0.\)</span></li>
+<li>因为点 <span class="math inline">\(A(2,1,3), B=(0,-1,3)\)</span> 在
+<span class="math inline">\(\pi\)</span> 上, 故 <span
+class="math inline">\(\mathbf n\perp (2,2,0)\)</span> 且 <span
+class="math inline">\(\mathbf n\perp \mathbf{a_1}\)</span>. 解得 <span
+class="math inline">\(A=-B=2C\)</span>.</li>
+</ol>
+<p>解得 <span class="math inline">\(\pi:2x-2y+z-5=0\)</span>.</p>
+<ol start="5" type="1">
+<li>由题意, 求得其交线为 <span
+class="math inline">\(\dfrac{x+13}{7}=\dfrac{y}{-1}=\dfrac{z+7}{6}\)</span>.
+故令 <span class="math inline">\(\mathbf{n}=(7,-1,6)\)</span>, 解得
+<span class="math inline">\(\pi:7x-y+6z-5=0\)</span>.</li>
+</ol>
+<h3 id="exercise-2">Exercise 2</h3>
+<p>求满足下列条件的直线的方程:</p>
+<ol type="1">
+<li>过点 <span class="math inline">\((2,0,-1)\)</span>, 且与直线 <span
+class="math inline">\(L_1:\left\{\begin{aligned}2x-3y+z-6=0\\4x-2y+3z+9=0\end{aligned}\right.\)</span>
+平行.</li>
+<li>过点 <span class="math inline">\(P_1:(2,-1,3)\)</span> 且与直线
+<span
+class="math inline">\(L_1:\dfrac{x+3}{7}=\dfrac{y}{0}=\dfrac{z+6}{2}\)</span>
+垂直相交.</li>
+<li>过点 <span class="math inline">\((-1,2,3)\)</span>, 垂直于直线 <span
+class="math inline">\(\dfrac{x}{4}=\dfrac{y}{5}=\dfrac{z}{6}\)</span>,
+且平行于平面 <span class="math inline">\(7x+8y+9z+10=0\)</span>.</li>
+<li>过点 <span class="math inline">\(P_0(-3,5,9)\)</span> 且与直线 <span
+class="math inline">\(L_1:\left\{\begin{aligned}y=3x+5\\z=2x-3\end{aligned}\right.\)</span>
+及 <span
+class="math inline">\(L_2:\left\{\begin{aligned}y=4x-7\\z=5x+10\end{aligned}\right.\)</span>
+都相交.</li>
+</ol>
+<h4 id="solution-16">Solution</h4>
+<p>在本题中, 均设所求直线为 <span class="math inline">\(L\)</span>,
+且其方向向量为 <span
+class="math inline">\(\mathbf{a}=(l,m,n)\)</span>.</p>
+<ol type="1">
+<li>因为 <span class="math inline">\(L\parallel L_1\)</span>, 于是 <span
+class="math inline">\(\mathbf{a}\parallel \mathbf{a_1}\)</span>, 又
+<span
+class="math inline">\(\mathbf{a_1}=\begin{vmatrix}\mathbf{i}&amp;\mathbf{j}&amp;\mathbf{k}\\2&amp;-3&amp;1\\4&amp;-2&amp;3\end{vmatrix}=-7\mathbf{i}-2\mathbf{j}+8\mathbf{k}\)</span>.
+取 <span class="math inline">\(\mathbf{a}=(7,2,-8)\)</span>, 有 <span
+class="math inline">\(L:\dfrac{x-2}{7}=\dfrac{y}{2}=\dfrac{z+1}{-8}\)</span>.</li>
+<li>因为 <span class="math inline">\(L\perp L_1\)</span> 且与 <span
+class="math inline">\(L_1\)</span> 相交, 于是有 <span
+class="math inline">\(7l+2n=0\)</span>. 又 <span
+class="math inline">\(L_1\)</span> 过点 <span
+class="math inline">\(P_2(-3,0,-6)\)</span>, 于是有 <span
+class="math inline">\(\begin{bmatrix}\overrightarrow{P_1P_2}&amp;\mathbf{a}
+&amp; \mathbf{a_1}\end{bmatrix}=0\)</span>. 解得 <span
+class="math inline">\(\mathbf{n}=(2,1,-7)\)</span>, 于是 <span
+class="math inline">\(L:\dfrac{x-2}{2}=y+1=\dfrac{z-3}{-7}\)</span>.</li>
+<li>由题意可得 <span class="math inline">\(\mathbf{a}\perp
+(4,5,6)\)</span> 且 <span
+class="math inline">\(\mathbf{a}\perp(7,8,9)\)</span>, 解得 <span
+class="math inline">\(\mathbf{a}=(1,-2,1)\)</span>. 于是解得 <span
+class="math inline">\(L:x+1=\dfrac{y-2}{-2}=z-3\)</span>.</li>
+<li>设过点 <span class="math inline">\(P_0\)</span> 以及直线 <span
+class="math inline">\(L_i\)</span> 的平面为 <span
+class="math inline">\(\pi_i(i=1,2)\)</span>, 则 <span
+class="math inline">\(\pi_1,\pi_2\)</span> 的交线即为所求, 故 <span
+class="math inline">\(L:\left\{\begin{aligned}4x-2y+z+13=0\\32x+7y-12z+169=0\end{aligned}\right.\)</span></li>
+</ol>
+<h3 id="exercise-3">Exercise 3</h3>
+<p>单项选择题.</p>
+<ol type="1">
+<li>设有直线 <span
+class="math inline">\(L:\left\{\begin{aligned}x+3y+2z+1=0\\2x-y+10z+3=0\end{aligned}\right.\)</span>
+及平面 <span class="math inline">\(\pi:4x-2y+z-2=0\)</span>, 则直线
+<span class="math inline">\(L\)</span>.</li>
+</ol>
+<ol type="A">
+<li>平行于 <span class="math inline">\(\pi\)</span>; (B) 在 <span
+class="math inline">\(\pi\)</span> 上; (C) 垂直于 <span
+class="math inline">\(\pi\)</span>; (D) 与 <span
+class="math inline">\(\pi\)</span> 斜交.</li>
+</ol>
+<ol start="2" type="1">
+<li>设矩阵 <span
+class="math inline">\(\mathbf{M}=\begin{bmatrix}a_1&amp;b_1&amp;c_1\\a_2&amp;b_2&amp;c_2\\a_3&amp;b_3&amp;c_3\end{bmatrix}\)</span>
+满秩, 则直线 <span
+class="math inline">\(L_1:\dfrac{x-a_3}{a_1-a_2}=\dfrac{y-b_3}{b_1-b_2}=\dfrac{z-c_3}{c_1-c_2}\)</span>
+与直线 <span
+class="math inline">\(L_2:\dfrac{x-a_1}{a_2-a_3}=\dfrac{y-b_1}{b_2-b_3}=\dfrac{z-c_1}{c_2-c_3}\)</span>.</li>
+</ol>
+<ol type="A">
+<li>相交于一点; (B) 重合; (C) 平行但不重合; (D) 异面.</li>
+</ol>
+<h4 id="solution-17">Solution</h4>
+<ol type="1">
+<li>因为 <span class="math inline">\(L\)</span> 的方向向量 <span
+class="math inline">\(\mathbf{a}\)</span> 与 <span
+class="math inline">\(\pi\)</span> 的法向量 <span
+class="math inline">\(\mathbf{n}\)</span> 平行, 于是 <span
+class="math inline">\(L\)</span> 与 <span
+class="math inline">\(\pi\)</span> 垂直. 故<strong>答案为
+C</strong>.</li>
+<li>设矩阵 <span
+class="math inline">\(\mathbf{A}=\begin{bmatrix}a_3-a_1&amp;b_3-b_1&amp;c_3-c_1\\a_1-a_2&amp;b_1-b_2&amp;c_1-c_2\\a_2-a_3&amp;b_2-b_3&amp;c_2-c_3\end{bmatrix}\)</span>,
+则有 <span class="math inline">\(\det(\mathbf A)=0\)</span>, 又 <span
+class="math inline">\(\mathbf{M}\)</span> 是满秩矩阵, 于是 <span
+class="math inline">\(\mathbf{a_1}\not\parallel \mathbf{a_2}\)</span>,
+即 <span class="math inline">\(L_1\)</span> 与 <span
+class="math inline">\(L_2\)</span> 相交于一点. 故<strong>答案为
+A</strong>.</li>
+</ol>
+<h3 id="exercise-4">Exercise 4</h3>
+<p>已知平面 <span class="math inline">\(\pi:3x-y+2z-5=0\)</span> 与直线
+<span
+class="math inline">\(L_1:\dfrac{x-7}{5}=y-4=\dfrac{z-5}{4}\)</span>
+的交点为 <span class="math inline">\(M\)</span>, 若直线 <span
+class="math inline">\(L\)</span> 在 <span
+class="math inline">\(\pi\)</span> 上过 <span
+class="math inline">\(M\)</span> 点, 且与 <span
+class="math inline">\(L_1\)</span> 垂直, 试求 <span
+class="math inline">\(L\)</span> 的方程.</p>
+<h4 id="solution-18">Solution</h4>
+<p>因为 <span class="math inline">\(L\perp L_1\)</span>, 于是有 <span
+class="math inline">\(\mathbf{a}\perp \mathbf{a_1}\)</span>, 又 <span
+class="math inline">\(L\)</span> 在 <span
+class="math inline">\(\pi\)</span> 上, 于是 <span
+class="math inline">\(\mathbf{a}\perp \mathbf{n}\)</span>. 解得 <span
+class="math inline">\(\mathbf{a}=(3,1,-4)\)</span>. 又 <span
+class="math inline">\(M(2,3,1)\)</span>. 于是 <span
+class="math inline">\(L:\dfrac{x-2}{3}=y-3=\dfrac{z-1}{-4}\)</span>.</p>
+<h3 id="exercise-5">Exercise 5</h3>
+<p>求直线 <span
+class="math inline">\(L:\dfrac{x-3}{2}=\dfrac{y-4}{3}=\dfrac{z-5}{6}\)</span>
+与平面 <span class="math inline">\(\pi:x+y+z=0\)</span>
+的交点与夹角.</p>
+<h4 id="solution-19">Solution</h4>
+<p>将直线转为参数式方程, 有 <span class="math display">\[
+L:\left\{\begin{aligned}x=2t+3\\y=3t+4\\z=6t+5\end{aligned}\right.
+\]</span> 故 <span class="math inline">\(L\)</span> 与 <span
+class="math inline">\(\pi\)</span> 的交点为 <span
+class="math inline">\(\left(\dfrac{9}{11},\dfrac{8}{11},-\dfrac{17}{11}\right)\)</span>.
+且 <span class="math inline">\(L\)</span> 与 <span
+class="math inline">\(\pi\)</span> 之间的夹角 <span
+class="math inline">\(\theta\)</span> 满足 <span class="math display">\[
+\sin\theta=\cos(\mathbf{a},\mathbf{n})=\dfrac{|Al+Bm+Cn|}{\sqrt{A^2+B^2+C^2}\sqrt{l^2+m^2+n^2}}=\dfrac{11\sqrt{3}}{21}
+\]</span> 于是 <span class="math inline">\(\theta=\arcsin
+\dfrac{11\sqrt3}{21}\)</span>.</p>
+<h3 id="exercise-6">Exercise 6</h3>
+<p>求通过 <span class="math inline">\(z\)</span> 轴且与平面 <span
+class="math inline">\(\pi_1:2x+y-\sqrt{5}z-7=0\)</span> 的夹角为 <span
+class="math inline">\(\dfrac{\pi}{3}\)</span> 的平面方程.</p>
+<h4 id="solution-20">Solution</h4>
+<p>设所求平面为 <span class="math inline">\(\pi:Ax+By=0\)</span>, 则有
+<span class="math display">\[
+\dfrac{|2A+B|}{\sqrt{10}\sqrt{A^2+B^2}}=\cos\dfrac{\pi}{3}=\dfrac{1}{2}
+\]</span> 解得 <span class="math inline">\(A=-3B\)</span> 或 <span
+class="math inline">\(A=\dfrac{1}{3}B\)</span>. 于是 <span
+class="math inline">\(\pi:x+3y=0\)</span> 或 <span
+class="math inline">\(\pi:3x-y=0\)</span>.</p>
+<h3 id="exercise-7">Exercise 7</h3>
+<p>求点 <span class="math inline">\((1,2,-1)\)</span> 到平面 <span
+class="math inline">\(x-2y-z+1=0\)</span> 的距离.</p>
+<h4 id="solution-21">Solution</h4>
+<p>由距离公式有 <span class="math display">\[
+d=\dfrac{|Ax_1+By_1+Cz_1+D|}{\sqrt{A^2+B^2+C^2}}=\dfrac{\sqrt{6}}{6}
+\]</span></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Vectors/" rel="tag"># Vectors</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/10/17/RD_C3_E2/" rel="prev" title="Rudin Chap.3 Exercise 6-10">
+      <i class="fa fa-chevron-left"></i> Rudin Chap.3 Exercise 6-10
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/10/19/RD_C4_E1/" rel="next" title="Rudin Chap.4 Exercise 1-3">
+      Rudin Chap.4 Exercise 1-3 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#exercise-3.1.6"><span class="nav-number">1.</span> <span class="nav-text">Exercise 3.1.6</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#solution"><span class="nav-number">1.1.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exercise-3.1.8"><span class="nav-number">2.</span> <span class="nav-text">Exercise 3.1.8</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#solution-1"><span class="nav-number">2.1.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exercise-3.1.10"><span class="nav-number">3.</span> <span class="nav-text">Exercise 3.1.10</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#solution-2"><span class="nav-number">3.1.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exercise-3.1.11"><span class="nav-number">4.</span> <span class="nav-text">Exercise 3.1.11</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#solution-3"><span class="nav-number">4.1.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exercise-3.1.12"><span class="nav-number">5.</span> <span class="nav-text">Exercise 3.1.12</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#solution-4"><span class="nav-number">5.1.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exercise-3.1.16"><span class="nav-number">6.</span> <span class="nav-text">Exercise 3.1.16</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#solution-5"><span class="nav-number">6.1.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exercise-3.1.18"><span class="nav-number">7.</span> <span class="nav-text">Exercise 3.1.18</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#solution-6"><span class="nav-number">7.1.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exercise-3.2.2"><span class="nav-number">8.</span> <span class="nav-text">Exercise 3.2.2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#solution-7"><span class="nav-number">8.1.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exercise-3.2.3"><span class="nav-number">9.</span> <span class="nav-text">Exercise 3.2.3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#solution-8"><span class="nav-number">9.1.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exercise-3.2.7"><span class="nav-number">10.</span> <span class="nav-text">Exercise 3.2.7</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#solution-9"><span class="nav-number">10.1.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exercise-3.2.8"><span class="nav-number">11.</span> <span class="nav-text">Exercise 3.2.8</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#solution-10"><span class="nav-number">11.1.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exercise-3.2.11"><span class="nav-number">12.</span> <span class="nav-text">Exercise 3.2.11</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#solution-11"><span class="nav-number">12.1.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exercise-3.2.13"><span class="nav-number">13.</span> <span class="nav-text">Exercise 3.2.13</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#solution-12"><span class="nav-number">13.1.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exercise-3.2.14"><span class="nav-number">14.</span> <span class="nav-text">Exercise 3.2.14</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#solution-13"><span class="nav-number">14.1.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exercise-3.2.18"><span class="nav-number">15.</span> <span class="nav-text">Exercise 3.2.18</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#solution-14"><span class="nav-number">15.1.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exercise-1"><span class="nav-number">16.</span> <span class="nav-text">Exercise 1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#solution-15"><span class="nav-number">16.1.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exercise-2"><span class="nav-number">17.</span> <span class="nav-text">Exercise 2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#solution-16"><span class="nav-number">17.1.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exercise-3"><span class="nav-number">18.</span> <span class="nav-text">Exercise 3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#solution-17"><span class="nav-number">18.1.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exercise-4"><span class="nav-number">19.</span> <span class="nav-text">Exercise 4</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#solution-18"><span class="nav-number">19.1.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exercise-5"><span class="nav-number">20.</span> <span class="nav-text">Exercise 5</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#solution-19"><span class="nav-number">20.1.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exercise-6"><span class="nav-number">21.</span> <span class="nav-text">Exercise 6</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#solution-20"><span class="nav-number">21.1.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exercise-7"><span class="nav-number">22.</span> <span class="nav-text">Exercise 7</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#solution-21"><span class="nav-number">22.1.</span> <span class="nav-text">Solution</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="feicheng"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">feicheng</p>
+  <div class="site-description" itemprop="description">The best people in life are free</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2022-10 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">feicheng</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
