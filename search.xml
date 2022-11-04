@@ -1,6 +1,263 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Mathematical Analysis Exercise Chap. 1 Sec. 5</title>
+    <url>/2022/10/28/MA_C1_S5/</url>
+    <content><![CDATA[<h2 id="part-a">Part A</h2>
+<h3 id="exercise-1.5.3">Exercise 1.5.3</h3>
+<p>证明: 若 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\([a,b]\)</span> 上连续, 则 <span
+class="math inline">\(|f|\)</span> 在 <span
+class="math inline">\([a,b]\)</span> 上连续.</p>
+<h4 id="solution">Solution</h4>
+<p>对于任意的 <span class="math inline">\(x_0\in[a,b]\)</span> 以及
+<span class="math inline">\(\varepsilon&gt;0\)</span>, <span
+class="math inline">\(\exists \delta&gt;0\)</span> 使得对任意的 <span
+class="math inline">\(t\in\delta(\overset{\circ}{x_0})\)</span> 有 <span
+class="math display">\[
+||f(x_0)|-|f(t)||&lt;|f(x_0)-f(t)|&lt;\varepsilon
+\]</span> 该命题的逆命题并不成立, 例如: 令 <span
+class="math inline">\(f:\mathbb{R}\to\{-1,1\}\)</span> 为 <span
+class="math display">\[
+f(x)=\left\{\begin{aligned}&amp;1,x\in\mathbb{R}\backslash\mathbb{Q}\\&amp;-1,x\in\mathbb{Q}\end{aligned}\right.
+\]</span> 则 <span class="math inline">\(|f|\)</span> 连续而 <span
+class="math inline">\(f\)</span> 不连续.</p>
+<h3 id="exercise-1.5.4">Exercise 1.5.4</h3>
+<p>设 <span class="math inline">\(f,g\)</span> 在 <span
+class="math inline">\([a,b]\)</span> 上连续, 记 <span
+class="math display">\[
+\varphi(x)=\max_{x\in[a,b]}\{f(x),g(x)\},\psi(x)=\min_{x\in[a,b]}\{f(x),g(x)
+\}
+\]</span> 证明: <span class="math inline">\(\varphi,\psi\)</span> 在
+<span class="math inline">\([a,b]\)</span> 上连续.</p>
+<h4 id="solution-1">Solution</h4>
+<p>因为 <span class="math display">\[
+\varphi(x)=\dfrac{1}{2}(f(x)+g(x)+|f(x)-g(x)|),\psi(x)=\dfrac{1}{2}(f(x)+g(x)-|f(x)-g(x)|)
+\]</span> 根据 1.5.3 中的结论以及题设, <span
+class="math inline">\(f(x),g(x)\)</span> 以及 <span
+class="math inline">\(|f(x)-g(x)|\)</span> 均是 <span
+class="math inline">\([a,b]\)</span> 上的连续函数. 故 <span
+class="math inline">\(\varphi,\psi\)</span> 在 <span
+class="math inline">\([a,b]\)</span> 上连续.</p>
+<h3 id="exercise-1.5.6">Exercise 1.5.6</h3>
+<p>证明: <span class="math inline">\(f:I\to \mathbb{R}\)</span> 在 <span
+class="math inline">\(x_0\in I\)</span> 处连续 <span
+class="math inline">\(\Leftrightarrow \forall x_n\in I,x_n\to
+x_0(n\to\infty)\)</span>, 恒有 <span
+class="math inline">\(\lim_{n\to\infty}f(x_n)=f(x_0)\)</span>.</p>
+<h4 id="solution-2">Solution</h4>
+<ul>
+<li>若 <span class="math inline">\(f:I\to\mathbb{R}\)</span> 在 <span
+class="math inline">\(x_0\in I\)</span> 处连续, 则 <span
+class="math inline">\(\forall
+\varepsilon&gt;0,\exists\delta&gt;0\)</span> 使得当 <span
+class="math inline">\(0&lt;|x-x_0|&lt;\delta\)</span> 时有</li>
+</ul>
+<p><span class="math display">\[
+|f(x_0)-f(x)|&lt;\varepsilon.
+\]</span></p>
+<p>又因为 <span class="math inline">\(\lim_{n\to\infty}
+x_n=x_0\)</span>, 故对任意的 <span
+class="math inline">\(\delta&gt;0\)</span>, 有 <span
+class="math inline">\(N&gt;0\)</span> 使得当 <span
+class="math inline">\(n&gt;N\)</span> 时有 <span class="math display">\[
+|x_n-x_0|&lt;\delta
+\]</span> 即对任意的 <span
+class="math inline">\(\varepsilon&gt;0\)</span>, 存在 <span
+class="math inline">\(N&gt;0\)</span> 使得当 <span
+class="math inline">\(n&gt;N\)</span> 时有 <span class="math display">\[
+|f(x_n)-f(x_0)|&lt;\varepsilon
+\]</span> 即 <span class="math inline">\(\lim_{n\to\infty}
+f(x_n)=f(x_0)\)</span>.</p>
+<ul>
+<li>若 <span class="math inline">\(\forall x_n\in I,x_n\to
+x_0(n\to\infty)\)</span> 恒有 <span
+class="math inline">\(\lim_{n\to\infty}f(x_n)=f(x_0)\)</span>.</li>
+</ul>
+<p>假设 <span class="math inline">\(\lim_{x\to x_0}f(x)\neq
+f(x_0)\)</span>. 即 <span class="math inline">\(\forall
+\delta&gt;0\)</span>, 有 <span
+class="math inline">\(\varepsilon&gt;0\)</span> 以及 <span
+class="math inline">\(x\in I\)</span> 使得当 <span
+class="math inline">\(|x-x_0|&lt;\delta\)</span> 时有 <span
+class="math display">\[
+|f(x)-f(x_0)|\geq\varepsilon
+\]</span> 令 <span class="math inline">\(\delta_n=\dfrac{1}{n}\)</span>,
+则存在序列 <span class="math inline">\(\{x_n\}\)</span> 使得 <span
+class="math inline">\(\lim_{n\to\infty}x_n=x_0\)</span> 但 <span
+class="math inline">\(\lim_{n\to\infty} f(x_n)\not=f(x_0)\)</span>.
+与题设矛盾.</p>
+<h3 id="exercise-1.5.7">Exercise 1.5.7</h3>
+<p>设函数 <span class="math inline">\(f:I\to\mathbb R\)</span> 在 <span
+class="math inline">\(x_0\in I\)</span> 处连续, 且 <span
+class="math inline">\(f(x_0)&gt;0\)</span>, 证明: 存在 <span
+class="math inline">\(x_0\)</span> 的一个邻域及一个正数 <span
+class="math inline">\(q\)</span> 使得在该邻域内有 <span
+class="math inline">\(f(x)\geq q&gt;0\)</span>.</p>
+<h4 id="solution-3">Solution</h4>
+<p><span class="math inline">\(\forall
+0&lt;\varepsilon&lt;f(x_0)\)</span>, <span class="math inline">\(\exists
+\delta&gt;0\)</span>, 使得当 <span class="math inline">\(x\in
+\overset{\circ}U(x_0,\delta)\)</span> 时有 <span
+class="math inline">\(|f(x_0)-f(x)|&lt;\varepsilon\)</span>, 令 <span
+class="math inline">\(q=f(x_0)-\varepsilon\)</span>, 则有 <span
+class="math inline">\(f(x)\geq q&gt;0\)</span>.</p>
+<h3 id="exercise-1.5.10">Exercise 1.5.10</h3>
+<p>求下列函数的极限</p>
+<ol type="1">
+<li><span class="math inline">\(\lim\limits_{x\to 1}\dfrac{\arctan
+x}{\sqrt{x+\ln x}}\)</span>.</li>
+<li><span class="math inline">\(\lim\limits_{x\to
+0}\dfrac{\ln(1+2x)}{\sin 3x}\)</span>.</li>
+<li><span class="math inline">\(\lim\limits_{x\to 0}\left(\cot
+x-\dfrac{\mathrm{e}^{2x}}{\sin x}\right)\)</span>.</li>
+<li><span class="math inline">\(\lim\limits_{x\to 0}(\cos
+x)^{\frac{1}{x^2}}\)</span>.</li>
+<li><span class="math inline">\(\lim\limits_{x\to\frac{\pi}{2}}(1+\cos
+x)^{\tan x}\)</span></li>
+</ol>
+<h4 id="solution-4">Solution</h4>
+<ol type="1">
+<li><p>直接代值得结果为 <span
+class="math inline">\(\dfrac{\pi}{4}\)</span>.</p></li>
+<li><p><span class="math display">\[
+\lim_{x\to 0}\dfrac{\ln (1+2x)}{\sin 3x}=\lim_{x\to
+0}\dfrac{2x}{3x}=\dfrac{2}{3}
+\]</span></p></li>
+<li><p><span class="math display">\[
+\lim\limits_{x\to 0}\left(\cot x-\dfrac{\mathrm{e}^{2x}}{\sin
+x}\right)=\lim_{x\to 0}\left(\dfrac{\cos x-\mathrm{e}^{2x}}{\sin
+x}\right)=\lim_{x\to 0}\dfrac{\cos x-1}{\sin x}-\lim_{x\to
+0}\dfrac{\mathrm{e}^{2x}-1}{\sin x}=-2
+\]</span></p></li>
+<li><p><span class="math display">\[
+\lim_{x\to 0}(\cos x)^{\frac{1}{x^2}}=\lim_{x\to
+0}\mathrm{e}^{\frac{\ln\cos x}{x^2}}=\mathrm{e}^{\lim_{x\to 0}\frac{\ln
+\cos x}{x^2}}=\mathrm{e}^{\lim_{x\to 0}\frac{-\tan
+x}{2x}}=\mathrm{e}^{-\frac{1}{2}}
+\]</span></p></li>
+<li><p><span class="math display">\[
+\lim_{x\to\frac{\pi}{2}}(1+\cos x)^{\tan
+x}=\lim_{x\to\frac{\pi}{2}}\mathrm{e}^{\tan x\ln(1+\cos
+x)}=\mathrm{e}^{\lim_{x\to \frac{\pi}{2}}\sin x\cdot \ln(1+\cos
+x)\cdot\frac{1}{\cos x}}=\mathrm{e}
+\]</span></p></li>
+</ol>
+<h3 id="exercise-1.5.15">Exercise 1.5.15</h3>
+<p>设 <span class="math inline">\(f\in C[a,b]\)</span>, <span
+class="math inline">\(a&lt;x_1&lt;x_2&lt;\cdots&lt;x_n&lt;b\)</span>.
+证明至少存在一点 <span class="math inline">\(\xi\in(a,b)\)</span> 使得
+<span class="math display">\[
+f(\xi)=\dfrac{1}{\lambda}\sum_{i=1}^n\lambda_i f(x_i)
+\]</span> 其中 <span
+class="math inline">\(\lambda=\sum_i\lambda_i\)</span>, 且 <span
+class="math inline">\(\lambda_i&gt;0,(i=1,2,3,\dots,n)\)</span>.</p>
+<h4 id="solution-5">Solution</h4>
+<p>因为 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\([a,b]\)</span> 上连续, 故 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\([x_1,x_n]\)</span> 上存在 <span
+class="math inline">\(\xi_1,\xi_2\in[x_1,x_n]\)</span> 使得 <span
+class="math display">\[
+f(\xi_1)=\min_{x\in[x_1,x_n]}\{f(x)\}=m,f(\xi_2)=\max_{x\in[x_1,x_n]}\{f(x)\}=M
+\]</span> 于是有 <span class="math display">\[
+m\leq f(x_i)\leq M
+\]</span> 即 <span class="math display">\[
+\lambda_im\leq\lambda_if(x_i)\leq\lambda_i M
+\]</span> 对 <span class="math inline">\(i\)</span> 从 <span
+class="math inline">\(1\sim n\)</span> 求和, 有 <span
+class="math display">\[
+m\sum_{i=1}^n\lambda_i\leq\sum_{i=1}^n\lambda_if(x_i)\leq M\sum_{i=1}^n
+\lambda_i
+\]</span> 故 <span class="math display">\[
+m\leq\dfrac{1}{\lambda}\sum_{i=1}^n \lambda_if(x_i)\leq M
+\]</span> 根据介值定理知存在 <span
+class="math inline">\(\xi\in[x_1,x_n]\)</span> 使得 <span
+class="math display">\[
+f(\xi)=\dfrac{1}{\lambda}\sum_{i=1}^n\lambda_if(x_i)
+\]</span></p>
+<h2 id="part-b">Part B</h2>
+<h3 id="exercise-1.5.1">Exercise 1.5.1</h3>
+<p>设函数 <span class="math inline">\(f:\mathbb R\to\mathbb R\)</span>
+满足对任意的 <span class="math inline">\(x_1,x_2\in\mathbb R\)</span>,
+<span class="math inline">\(f(x_1+x_2)=f(x_1)+f(x_2)\)</span>, 并且
+<span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(x=0\)</span> 处连续, 证明: <span
+class="math inline">\(f\)</span> 在 <span class="math inline">\(\mathbb
+R\)</span> 上连续.</p>
+<h4 id="solution-6">Solution</h4>
+<p>根据 <span class="math inline">\(f\)</span> 的性质易得 <span
+class="math inline">\(f(0)=0\)</span> 且 <span
+class="math inline">\(f(x)=-f(-x)\)</span>.</p>
+<p>因为 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(x=0\)</span> 处连续, 故 <span
+class="math inline">\(\forall\varepsilon&gt;0\)</span>, <span
+class="math inline">\(\exists\delta &gt;0\)</span> 使得当 <span
+class="math inline">\(|x-0|&lt;\delta\)</span> 时有 <span
+class="math display">\[
+|f(x)|&lt;\varepsilon
+\]</span> 故对任意的 <span class="math inline">\(x_0\in\mathbb
+R\)</span> 及 <span class="math inline">\(\varepsilon&gt;0\)</span>, 取
+<span class="math inline">\(\delta\)</span> 使得当 <span
+class="math inline">\(|x|&lt;\delta\)</span> 时有 <span
+class="math inline">\(|f(x)|&lt;\varepsilon\)</span>, 则当 <span
+class="math inline">\(|x-x_0|&lt;\delta\)</span> 时有 <span
+class="math display">\[
+|f(x)-f(x_0)|=|f(x-x_0)|&lt;\varepsilon
+\]</span> 即 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(\mathbb{R}\)</span> 上连续.</p>
+<h3 id="exercise-1.5.2">Exercise 1.5.2</h3>
+<p>设 <span class="math inline">\(f\in C[a,+\infty)\)</span>, 并且 <span
+class="math inline">\(\lim\limits_{x\to+\infty}f(x)\)</span> 存在, 证明
+<span class="math inline">\(f\)</span> 在 <span
+class="math inline">\([a,+\infty)\)</span> 上有界.</p>
+<h4 id="solution-7">Solution</h4>
+<p>设 <span class="math inline">\(b&gt;a\)</span>, 则 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\([a,b]\)</span> 上连续, 故 <span
+class="math inline">\(f([a,b])\)</span> 有界. 又 <span
+class="math inline">\(\lim_{x\to+\infty}f(x)\)</span> 存在, 即 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\([a,+\infty)\)</span> 上有界.</p>
+<h3 id="exercise-1.5.3-1">Exercise 1.5.3</h3>
+<p>设 <span class="math inline">\(f\in C(a,b)\)</span>, 并且 <span
+class="math inline">\(f(a+0)\)</span> 与 <span
+class="math inline">\(f(b-0)\)</span> 存在 (包括极限为无穷大) 且异号,
+证明: 在 <span class="math inline">\((a,b)\)</span> 内至少存在一点 <span
+class="math inline">\(\xi\)</span>, 使 <span
+class="math inline">\(f(\xi)=0\)</span>.</p>
+<h4 id="solution-8">Solution</h4>
+<p>不妨设 <span class="math inline">\(\lim_{x\to
+a^+}f(x)=m&gt;0,\lim_{x\to b^-}f(x)=n&lt;0\)</span>. 任取 <span
+class="math inline">\(0&lt;\varepsilon_1&lt;m\)</span>, 存在 <span
+class="math inline">\(\delta_1&gt;0\)</span> 使得当 <span
+class="math inline">\(x\in(a,a+\delta_1)\)</span> 时有 <span
+class="math display">\[
+0&lt;m-\varepsilon_1&lt;f(x)&lt;m+\varepsilon_1
+\]</span> 同理, 任取 <span
+class="math inline">\(0&lt;\varepsilon_2&lt;-n\)</span>, 存在 <span
+class="math inline">\(\delta_2&gt;0\)</span> 使得当 <span
+class="math inline">\(x\in(b-\delta_2,b)\)</span> 时有 <span
+class="math display">\[
+f(x)&lt;n+\varepsilon_2&lt;0
+\]</span> 令 <span
+class="math inline">\(x_1\in(a,a+\delta_1),x_2\in(b-\delta_2,b)\)</span>.
+则 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\([x_1,x_2]\)</span> 处连续且 <span
+class="math inline">\(f(x_1)&gt;0,f(x_2)&lt;0\)</span>. 故存在一点 <span
+class="math inline">\(\xi\in[x_1,x_2]\)</span> 使得 <span
+class="math inline">\(f(\xi)=0\)</span>.</p>
+]]></content>
+      <categories>
+        <category>Principle of mathematical analysis</category>
+      </categories>
+      <tags>
+        <tag>Continuous</tag>
+        <tag>Functions</tag>
+        <tag>Limits</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linear Algebra Assignment Chap.3</title>
     <url>/2022/10/18/LA_C3_As/</url>
     <content><![CDATA[<h3 id="exercise-3.1.6">Exercise 3.1.6</h3>
@@ -839,10 +1096,11 @@ class="math inline">\(\begin{bmatrix}\alpha_1&amp;\alpha_2&amp;\alpha_3&amp;\alp
 class="math inline">\(\alpha_1,\alpha_2,\alpha_3\)</span>, 且有 <span
 class="math inline">\(\alpha_4=\alpha_1-\alpha_2+\alpha_3,\alpha_5=2\alpha_1-2\alpha_2+\alpha_3\)</span>.</p>
 <h3 id="exercise-4.3.3">Exercise 4.3.3</h3>
-<p>设有向量组 <span
-class="math inline">\(\alpha_1=(1,1,1,3)^T,\alpha_2=(-1,-3,5,1)^T,\alpha_3=(3,2,-1,p+2),\alpha_4=(-2,-6,10,p)^T\)</span>.
-当 <span class="math inline">\(p\)</span> 取何值时, 向量组线性无关?</p>
-<p>并将向量 <span class="math inline">\(\alpha=(4,1,6,10)^T\)</span>
+<p>设有向量组 <span class="math display">\[
+\alpha_1=(1,1,1,3)^T,\alpha_2=(-1,-3,5,1)^T,\alpha_3=(3,2,-1,p+2),\alpha_4=(-2,-6,10,p)^T
+\]</span> 当 <span class="math inline">\(p\)</span> 取何值时,
+向量组线性无关? 并将向量 <span
+class="math inline">\(\alpha=(4,1,6,10)^T\)</span>
 用该向量组线性表示.</p>
 <h4 id="solution-12">Solution</h4>
 <p>将矩阵 <span
@@ -877,6 +1135,9 @@ class="math inline">\(k=2p-1\)</span>, 有 <span class="math display">\[
 class="math inline">\(k=2p\)</span>, 有 <span class="math display">\[
 \alpha_k=\dfrac{1}{2}\sum_{j=1}^m\beta_j-\sum_{j=1}^{p-1}\beta_{2j}-\sum_{j=p}^{\frac{m-1}{2}}\beta_{_{2j+1}}
 \]</span></p>
+<p>即所有 <span class="math inline">\(\alpha_k\)</span> 都可以被 <span
+class="math inline">\(\beta_1,\beta_2,\dots,\beta_m\)</span> 线性表示.
+于是两向量组等价, 故有相同的秩.</p>
 <h3 id="exercise-4.3.5">Exercise 4.3.5</h3>
 <p>试举例说明下面的命题错误: 若两个向量组有相同的秩,
 则两个向量组必等价.</p>
@@ -1180,8 +1441,141 @@ f^{(n)}(x)=\{[(x-2)(x-1)]^{-1}\}^{(n)}=(-1)^{n}n!\left[\dfrac{1}{(x-2)(x-1)}\rig
         <category>Principle of mathematical analysis</category>
       </categories>
       <tags>
-        <tag>Differentiation</tag>
         <tag>Functions</tag>
+        <tag>Differentiation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mathematical Analysis Exercise Chap. 2 Sec. 1</title>
+    <url>/2022/10/30/MA_C2_S1/</url>
+    <content><![CDATA[<h2 id="part-b">Part B</h2>
+<h3 id="exercise-1">Exercise 1</h3>
+<p>若函数 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(x=0\)</span> 处连续, 且 <span
+class="math inline">\(\lim_{x\to0}\dfrac{f(x)}{x}\)</span> 存在, 证明
+<span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(x=0\)</span> 处可导.</p>
+<h4 id="solution">Solution</h4>
+<p>因为 <span class="math inline">\(\lim_{x\to 0}
+\dfrac{f(x)}{x}\)</span> 存在, 不妨设 <span
+class="math inline">\(\lim_{x\to 0}\dfrac{f(x)}{x}=a\)</span>, 则 <span
+class="math inline">\(f(x)\)</span> 是 <span class="math inline">\(x\to
+0\)</span> 时的同阶或高阶无穷小. 即 <span
+class="math inline">\(\lim_{x\to 0} f(x)=f(0)=0\)</span>. 于是 <span
+class="math display">\[
+f&#39;(0)=\lim_{x\to 0}\dfrac{f(x)-f(0)}{x-0}=a
+\]</span> 即 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(x=0\)</span> 处可导.</p>
+<h3 id="exercise-2">Exercise 2</h3>
+<p>若 <span class="math inline">\(f\)</span> 是定义在 <span
+class="math inline">\(\mathbb{R}\)</span> 上的函数, <span
+class="math inline">\(f(x)\neq 0\)</span>, <span
+class="math inline">\(f(0)=1\)</span>, 且 <span class="math display">\[
+\forall x,y\in\mathbb{R},f(x+y)=f(x)f(y).
+\]</span> 证明: <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(\mathbb R\)</span> 上可导, 且 <span
+class="math inline">\(f&#39;(x)=f(x)\)</span>.</p>
+<h4 id="solution-1">Solution</h4>
+<p>令 <span class="math inline">\(x=y=0\)</span> 可得 <span
+class="math display">\[
+f(0)^2-f(0)=0
+\]</span> 因为 <span class="math inline">\(f(x)\neq 0\)</span>, 故 <span
+class="math inline">\(f(0)=1\)</span>.</p>
+<p>于是 <span class="math inline">\(\forall x_0\in \mathbb R\)</span>,
+有 <span class="math display">\[
+f&#39;(x_0)=\lim_{\Delta x\to 0}\dfrac{f(x_0+\Delta x)-f(x_0)}{\Delta
+x}=f(x_0)\lim_{\Delta x\to 0}\dfrac{f(\Delta x)-1}{\Delta x}=f(x_0)\cdot
+f&#39;(0)=f(x_0)
+\]</span></p>
+<h3 id="exercise-3">Exercise 3</h3>
+<p>设函数 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(x=a\)</span> 处可导, 且 <span
+class="math inline">\(f(a)\neq 0\)</span>. 试求 <span
+class="math display">\[
+\lim_{n\to\infty}\left[\dfrac{f\left(a+\frac{1}{n}\right)}{f(a)}\right]^n
+\]</span></p>
+<h4 id="solution-2">Solution</h4>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{n\to\infty}\left[\dfrac{f\left(a+\frac{1}{n}\right)}{f(a)}\right]^n&amp;=\lim_{n\to
+\infty}\mathrm{e}^{n\ln f(a+\frac{1}{n})-\ln f(a)}=\mathrm{e}^{[\ln
+f(a)]&#39;}=\mathrm{e}^{\frac{f&#39;(a)}{f(a)}}
+\end{aligned}
+\]</span></p>
+<h3 id="exercise-4">Exercise 4</h3>
+<p>设曲线 <span class="math inline">\(f(x)\)</span> 与 <span
+class="math inline">\(\sin x\)</span> 在原点处相切, 试求极限 <span
+class="math display">\[
+\lim_{n\to \infty}n^{\frac{1}{2}}\sqrt{f\left(\dfrac{2}{n}\right)}
+\]</span></p>
+<h4 id="solution-3">Solution</h4>
+<p>因为 <span class="math inline">\(f(x)\)</span> 与 <span
+class="math inline">\(\sin x\)</span> 在原点处相切, 故 <span
+class="math inline">\(f(0)=0\)</span> 且 <span
+class="math inline">\(f&#39;(0)=\sin&#39;(0)=1\)</span>. 于是 <span
+class="math display">\[
+\begin{aligned}
+\lim_{n\to
+\infty}n^{\frac{1}{2}}\sqrt{f\left(\dfrac{2}{n}\right)}&amp;=\lim_{n\to\infty}\sqrt{nf\left(\dfrac{2}{n}\right)}\\&amp;=\sqrt{\lim_{n\to\infty}n\dfrac{f(\frac{2}{n})-f(0)}{\frac{2}{n}}\cdot\dfrac{2}{n}}\\&amp;=\sqrt{2\cdot
+f&#39;(0)}=\sqrt{2}
+\end{aligned}
+\]</span></p>
+<h3 id="exercise-5">Exercise 5</h3>
+<p>设 <span class="math inline">\(n\in\mathbb{N}_+\)</span>, 试讨论函数
+<span class="math display">\[
+f(x)=\left\{\begin{aligned}&amp;x^n\sin\dfrac{1}{x},x\neq
+0\\&amp;0\quad\quad\quad\ , x=0\end{aligned}\right.
+\]</span> 在 <span class="math inline">\(x=0\)</span> 处的连续性,
+可导性以及 <span class="math inline">\(f&#39;(x)\)</span> 在 <span
+class="math inline">\(x=0\)</span> 处的连续性.</p>
+<h4 id="solution-4">Solution</h4>
+<p>因为 <span class="math display">\[
+\lim_{x\to 0}f(x)=\left|x^n\sin \dfrac{1}{x}\right|\leq |x^n|=0=f(0)
+\]</span> 故 <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\(x=0\)</span> 处连续.</p>
+<p>又因为当 <span class="math inline">\(n\geq 2\)</span> 时 <span
+class="math display">\[
+|f&#39;(0)|=\left|\lim_{x\to 0}\dfrac{f(x)}{x}\right|=\lim_{x\to
+0}\left|x^{n-1}\sin\dfrac{1}{x}\right|\leq|x^{n-1}|=0
+\]</span> 故当 <span class="math inline">\(n\geq 2\)</span> 时, <span
+class="math inline">\(f&#39;(x)\)</span> 在 <span
+class="math inline">\(x=0\)</span> 处连续.</p>
+<p>而当 <span class="math inline">\(n=1\)</span> 时, <span
+class="math display">\[
+\lim_{x\to 0}\dfrac{f(x)}{x}=\lim_{x\to 0}\sin\dfrac{1}{x}
+\]</span> 极限不存在, 故 <span class="math inline">\(n=1\)</span> 时,
+<span class="math inline">\(f&#39;(x)\)</span> 在 <span
+class="math inline">\(x=0\)</span> 处不连续.</p>
+<h3 id="exercise-6">Exercise 6</h3>
+<p>设 <span class="math inline">\(f\in C[a,b],f(a)=f(b)=0\)</span>, 且
+<span class="math inline">\(f&#39;_+(a)f&#39;_-(b)&gt;0\)</span>, 证明:
+至少存在一点 <span class="math inline">\(\xi\in(a,b)\)</span>, 使得
+<span class="math inline">\(f(\xi)=0\)</span>.</p>
+<h4 id="solution-5">Solution</h4>
+<p>不妨假设 <span class="math inline">\(f&#39;_+(a)\)</span> 和 <span
+class="math inline">\(f&#39;_-(b)\)</span> 均 <span
+class="math inline">\(&gt;0\)</span>, 则 <span class="math display">\[
+f&#39;_+(a)=\lim_{x\to a^+}\dfrac{f(x)}{x-a}&gt;0
+\]</span> 即 <span class="math inline">\(\lim_{x\to a^+}
+f(x)&gt;0\)</span>. 同理可得 <span class="math inline">\(\lim_{x\to
+b^{-}} f(x)&lt;0\)</span>. 即存在 <span
+class="math inline">\(x_1,x_2\in(a,b)\)</span> 使得 <span
+class="math inline">\(f(x_1)&gt;0\)</span> 且 <span
+class="math inline">\(f(x_2)&lt;0\)</span>. 由零点存在定理知存在 <span
+class="math inline">\(\xi\in(a,b)\)</span> 使得 <span
+class="math inline">\(f(\xi)=0\)</span>.</p>
+<p>当 <span class="math inline">\(f&#39;_+(a)\)</span> 和 <span
+class="math inline">\(f&#39;_-(b)\)</span> 均 <span
+class="math inline">\(&lt;0\)</span> 时类似.</p>
+]]></content>
+      <categories>
+        <category>Principle of mathematical analysis</category>
+      </categories>
+      <tags>
+        <tag>Continuous</tag>
+        <tag>Functions</tag>
+        <tag>Limits</tag>
+        <tag>Differentiation</tag>
       </tags>
   </entry>
   <entry>
@@ -1356,271 +1750,108 @@ e^{-1}\)</span>.</p></li>
         <category>Principle of mathematical analysis</category>
       </categories>
       <tags>
-        <tag>Differentiation</tag>
         <tag>Functions</tag>
+        <tag>Differentiation</tag>
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2022/11/04/MA_C2_A3/</url>
-    <content><![CDATA[
-]]></content>
-  </entry>
-  <entry>
-    <title>Mathematical Analysis Exercise Chap. 1 Sec. 5</title>
-    <url>/2022/10/28/MA_C1_S5/</url>
-    <content><![CDATA[<h2 id="part-a">Part A</h2>
-<h3 id="exercise-1.5.3">Exercise 1.5.3</h3>
-<p>证明: 若 <span class="math inline">\(f\)</span> 在 <span
-class="math inline">\([a,b]\)</span> 上连续, 则 <span
-class="math inline">\(|f|\)</span> 在 <span
-class="math inline">\([a,b]\)</span> 上连续.</p>
-<h4 id="solution">Solution</h4>
-<p>对于任意的 <span class="math inline">\(x_0\in[a,b]\)</span> 以及
-<span class="math inline">\(\varepsilon&gt;0\)</span>, <span
-class="math inline">\(\exists \delta&gt;0\)</span> 使得对任意的 <span
-class="math inline">\(t\in\delta(\overset{\circ}{x_0})\)</span> 有 <span
+    <title>Mean Value Theorem</title>
+    <url>/2022/10/19/Mean_Value_Theorem/</url>
+    <content><![CDATA[<h3 id="definition-of-local-maximum">Definition of local maximum</h3>
+<p>Let <span class="math inline">\(f\)</span> be a real function defined
+on a metric space <span class="math inline">\(X\)</span>. We say that
+<span class="math inline">\(f\)</span> has a <em>local maximum</em> at a
+point <span class="math inline">\(p\in X\)</span> if there exists <span
+class="math inline">\(\delta &gt;0\)</span> such that <span
+class="math inline">\(f(q)\leq f(p)\)</span> for all <span
+class="math inline">\(q\in X\)</span> if <span
+class="math inline">\(d(p,q)&lt;\delta\)</span>.</p>
+<h3 id="lemma-1-fermat-theorem">Lemma 1 (Fermat Theorem)</h3>
+<p>Let <span class="math inline">\(f\)</span> be defined on <span
+class="math inline">\([a,b]\)</span>, if <span
+class="math inline">\(f\)</span> has a local maximum at a point <span
+class="math inline">\(x\in(a,b)\)</span>, and if <span
+class="math inline">\(f&#39;(x)\)</span> exists, then <span
+class="math inline">\(f&#39;(x)=0\)</span>.</p>
+<h4 id="proof">Proof</h4>
+<p>Choose <span class="math inline">\(\delta &gt;0\)</span> such that
+<span class="math inline">\(f(q)\leq f(x)\)</span> if <span
+class="math inline">\(q\in[a,b]\)</span> and <span
+class="math inline">\(d(q,x)&lt;\delta\)</span>, so that <span
 class="math display">\[
-||f(x_0)|-|f(t)||&lt;|f(x_0)-f(t)|&lt;\varepsilon
-\]</span> 该命题的逆命题并不成立, 例如: 令 <span
-class="math inline">\(f:\mathbb{R}\to\{-1,1\}\)</span> 为 <span
-class="math display">\[
-f(x)=\left\{\begin{aligned}&amp;1,x\in\mathbb{R}\backslash\mathbb{Q}\\&amp;-1,x\in\mathbb{Q}\end{aligned}\right.
-\]</span> 则 <span class="math inline">\(|f|\)</span> 连续而 <span
-class="math inline">\(f\)</span> 不连续.</p>
-<h3 id="exercise-1.5.4">Exercise 1.5.4</h3>
-<p>设 <span class="math inline">\(f,g\)</span> 在 <span
-class="math inline">\([a,b]\)</span> 上连续, 记 <span
-class="math display">\[
-\varphi(x)=\max_{x\in[a,b]}\{f(x),g(x)\},\psi(x)=\min_{x\in[a,b]}\{f(x),g(x)
-\}
-\]</span> 证明: <span class="math inline">\(\varphi,\psi\)</span> 在
-<span class="math inline">\([a,b]\)</span> 上连续.</p>
-<h4 id="solution-1">Solution</h4>
-<p>因为 <span class="math display">\[
-\varphi(x)=\dfrac{1}{2}(f(x)+g(x)+|f(x)-g(x)|),\psi(x)=\dfrac{1}{2}(f(x)+g(x)-|f(x)-g(x)|)
-\]</span> 根据 1.5.3 中的结论以及题设, <span
-class="math inline">\(f(x),g(x)\)</span> 以及 <span
-class="math inline">\(|f(x)-g(x)|\)</span> 均是 <span
-class="math inline">\([a,b]\)</span> 上的连续函数. 故 <span
-class="math inline">\(\varphi,\psi\)</span> 在 <span
-class="math inline">\([a,b]\)</span> 上连续.</p>
-<h3 id="exercise-1.5.6">Exercise 1.5.6</h3>
-<p>证明: <span class="math inline">\(f:I\to \mathbb{R}\)</span> 在 <span
-class="math inline">\(x_0\in I\)</span> 处连续 <span
-class="math inline">\(\Leftrightarrow \forall x_n\in I,x_n\to
-x_0(n\to\infty)\)</span>, 恒有 <span
-class="math inline">\(\lim_{n\to\infty}f(x_n)=f(x_0)\)</span>.</p>
-<h4 id="solution-2">Solution</h4>
-<ul>
-<li>若 <span class="math inline">\(f:I\to\mathbb{R}\)</span> 在 <span
-class="math inline">\(x_0\in I\)</span> 处连续, 则 <span
-class="math inline">\(\forall
-\varepsilon&gt;0,\exists\delta&gt;0\)</span> 使得当 <span
-class="math inline">\(0&lt;|x-x_0|&lt;\delta\)</span> 时有</li>
-</ul>
-<p><span class="math display">\[
-|f(x_0)-f(x)|&lt;\varepsilon.
-\]</span></p>
-<p>又因为 <span class="math inline">\(\lim_{n\to\infty}
-x_n=x_0\)</span>, 故对任意的 <span
-class="math inline">\(\delta&gt;0\)</span>, 有 <span
-class="math inline">\(N&gt;0\)</span> 使得当 <span
-class="math inline">\(n&gt;N\)</span> 时有 <span class="math display">\[
-|x_n-x_0|&lt;\delta
-\]</span> 即对任意的 <span
-class="math inline">\(\varepsilon&gt;0\)</span>, 存在 <span
-class="math inline">\(N&gt;0\)</span> 使得当 <span
-class="math inline">\(n&gt;N\)</span> 时有 <span class="math display">\[
-|f(x_n)-f(x_0)|&lt;\varepsilon
-\]</span> 即 <span class="math inline">\(\lim_{n\to\infty}
-f(x_n)=f(x_0)\)</span>.</p>
-<ul>
-<li>若 <span class="math inline">\(\forall x_n\in I,x_n\to
-x_0(n\to\infty)\)</span> 恒有 <span
-class="math inline">\(\lim_{n\to\infty}f(x_n)=f(x_0)\)</span>.</li>
-</ul>
-<p>假设 <span class="math inline">\(\lim_{x\to x_0}f(x)\neq
-f(x_0)\)</span>. 即 <span class="math inline">\(\forall
-\delta&gt;0\)</span>, 有 <span
-class="math inline">\(\varepsilon&gt;0\)</span> 以及 <span
-class="math inline">\(x\in I\)</span> 使得当 <span
-class="math inline">\(|x-x_0|&lt;\delta\)</span> 时有 <span
-class="math display">\[
-|f(x)-f(x_0)|\geq\varepsilon
-\]</span> 令 <span class="math inline">\(\delta_n=\dfrac{1}{n}\)</span>,
-则存在序列 <span class="math inline">\(\{x_n\}\)</span> 使得 <span
-class="math inline">\(\lim_{n\to\infty}x_n=x_0\)</span> 但 <span
-class="math inline">\(\lim_{n\to\infty} f(x_n)\not=f(x_0)\)</span>.
-与题设矛盾.</p>
-<h3 id="exercise-1.5.7">Exercise 1.5.7</h3>
-<p>设函数 <span class="math inline">\(f:I\to\mathbb R\)</span> 在 <span
-class="math inline">\(x_0\in I\)</span> 处连续, 且 <span
-class="math inline">\(f(x_0)&gt;0\)</span>, 证明: 存在 <span
-class="math inline">\(x_0\)</span> 的一个邻域及一个正数 <span
-class="math inline">\(q\)</span> 使得在该邻域内有 <span
-class="math inline">\(f(x)\geq q&gt;0\)</span>.</p>
-<h4 id="solution-3">Solution</h4>
-<p><span class="math inline">\(\forall
-0&lt;\varepsilon&lt;f(x_0)\)</span>, <span class="math inline">\(\exists
-\delta&gt;0\)</span>, 使得当 <span class="math inline">\(x\in
-\overset{\circ}U(x_0,\delta)\)</span> 时有 <span
-class="math inline">\(|f(x_0)-f(x)|&lt;\varepsilon\)</span>, 令 <span
-class="math inline">\(q=f(x_0)-\varepsilon\)</span>, 则有 <span
-class="math inline">\(f(x)\geq q&gt;0\)</span>.</p>
-<h3 id="exercise-1.5.10">Exercise 1.5.10</h3>
-<p>求下列函数的极限</p>
-<ol type="1">
-<li><span class="math inline">\(\lim\limits_{x\to 1}\dfrac{\arctan
-x}{\sqrt{x+\ln x}}\)</span>.</li>
-<li><span class="math inline">\(\lim\limits_{x\to
-0}\dfrac{\ln(1+2x)}{\sin 3x}\)</span>.</li>
-<li><span class="math inline">\(\lim\limits_{x\to 0}\left(\cot
-x-\dfrac{\mathrm{e}^{2x}}{\sin x}\right)\)</span>.</li>
-<li><span class="math inline">\(\lim\limits_{x\to 0}(\cos
-x)^{\frac{1}{x^2}}\)</span>.</li>
-<li><span class="math inline">\(\lim\limits_{x\to\frac{\pi}{2}}(1+\cos
-x)^{\tan x}\)</span></li>
-</ol>
-<h4 id="solution-4">Solution</h4>
-<ol type="1">
-<li><p>直接代值得结果为 <span
-class="math inline">\(\dfrac{\pi}{4}\)</span>.</p></li>
-<li><p><span class="math display">\[
-\lim_{x\to 0}\dfrac{\ln (1+2x)}{\sin 3x}=\lim_{x\to
-0}\dfrac{2x}{3x}=\dfrac{2}{3}
-\]</span></p></li>
-<li><p><span class="math display">\[
-\lim\limits_{x\to 0}\left(\cot x-\dfrac{\mathrm{e}^{2x}}{\sin
-x}\right)=\lim_{x\to 0}\left(\dfrac{\cos x-\mathrm{e}^{2x}}{\sin
-x}\right)=\lim_{x\to 0}\dfrac{\cos x-1}{\sin x}-\lim_{x\to
-0}\dfrac{\mathrm{e}^{2x}-1}{\sin x}=-2
-\]</span></p></li>
-<li><p><span class="math display">\[
-\lim_{x\to 0}(\cos x)^{\frac{1}{x^2}}=\lim_{x\to
-0}\mathrm{e}^{\frac{\ln\cos x}{x^2}}=\mathrm{e}^{\lim_{x\to 0}\frac{\ln
-\cos x}{x^2}}=\mathrm{e}^{\lim_{x\to 0}\frac{-\tan
-x}{2x}}=\mathrm{e}^{-\frac{1}{2}}
-\]</span></p></li>
-<li><p><span class="math display">\[
-\lim_{x\to\frac{\pi}{2}}(1+\cos x)^{\tan
-x}=\lim_{x\to\frac{\pi}{2}}\mathrm{e}^{\tan x\ln(1+\cos
-x)}=\mathrm{e}^{\lim_{x\to \frac{\pi}{2}}\sin x\cdot \ln(1+\cos
-x)\cdot\frac{1}{\cos x}}=\mathrm{e}
-\]</span></p></li>
-</ol>
-<h3 id="exercise-1.5.15">Exercise 1.5.15</h3>
-<p>设 <span class="math inline">\(f\in C[a,b]\)</span>, <span
-class="math inline">\(a&lt;x_1&lt;x_2&lt;\cdots&lt;x_n&lt;b\)</span>.
-证明至少存在一点 <span class="math inline">\(\xi\in(a,b)\)</span> 使得
+a&lt;x-\delta&lt;x&lt;x+\delta&lt;b
+\]</span> If <span class="math inline">\(x-\delta&lt;t&lt;x\)</span>,
+then <span class="math display">\[
+\dfrac{f(t)-f(x)}{t-x}\geq 0
+\]</span> Letting <span class="math inline">\(t\to x\)</span>, we see
+that <span class="math inline">\(f&#39;(x)\geq 0\)</span>.</p>
+<p>If <span class="math inline">\(x&lt;t&lt;x+\delta\)</span>, then
 <span class="math display">\[
-f(\xi)=\dfrac{1}{\lambda}\sum_{i=1}^n\lambda_i f(x_i)
-\]</span> 其中 <span
-class="math inline">\(\lambda=\sum_i\lambda_i\)</span>, 且 <span
-class="math inline">\(\lambda_i&gt;0,(i=1,2,3,\dots,n)\)</span>.</p>
-<h4 id="solution-5">Solution</h4>
-<p>因为 <span class="math inline">\(f\)</span> 在 <span
-class="math inline">\([a,b]\)</span> 上连续, 故 <span
-class="math inline">\(f\)</span> 在 <span
-class="math inline">\([x_1,x_n]\)</span> 上存在 <span
-class="math inline">\(\xi_1,\xi_2\in[x_1,x_n]\)</span> 使得 <span
+\dfrac{f(t)-f(x)}{t-x}\leq0
+\]</span> Letting <span class="math inline">\(t\to x\)</span>, we see
+that <span class="math inline">\(f&#39;(x)\leq 0\)</span>.</p>
+<p>Hence <span class="math inline">\(f&#39;(x)=0\)</span>.</p>
+<h3 id="theorem-1-cauchy-mean-value-theorem">Theorem 1 (Cauchy Mean
+Value Theorem)</h3>
+<p>If <span class="math inline">\(f\)</span> and <span
+class="math inline">\(g\)</span> are continuous real functions on <span
+class="math inline">\([a.b]\)</span> which are differentiable on <span
+class="math inline">\((a,b)\)</span>. Then there exists <span
+class="math inline">\(x\in(a,b)\)</span> such that <span
 class="math display">\[
-f(\xi_1)=\min_{x\in[x_1,x_n]}\{f(x)\}=m,f(\xi_2)=\max_{x\in[x_1,x_n]}\{f(x)\}=M
-\]</span> 于是有 <span class="math display">\[
-m\leq f(x_i)\leq M
-\]</span> 即 <span class="math display">\[
-\lambda_im\leq\lambda_if(x_i)\leq\lambda_i M
-\]</span> 对 <span class="math inline">\(i\)</span> 从 <span
-class="math inline">\(1\sim n\)</span> 求和, 有 <span
-class="math display">\[
-m\sum_{i=1}^n\lambda_i\leq\sum_{i=1}^n\lambda_if(x_i)\leq M\sum_{i=1}^n
-\lambda_i
-\]</span> 故 <span class="math display">\[
-m\leq\dfrac{1}{\lambda}\sum_{i=1}^n \lambda_if(x_i)\leq M
-\]</span> 根据介值定理知存在 <span
-class="math inline">\(\xi\in[x_1,x_n]\)</span> 使得 <span
-class="math display">\[
-f(\xi)=\dfrac{1}{\lambda}\sum_{i=1}^n\lambda_if(x_i)
+[g(b)-g(a)]f&#39;(x)=[f(b)-f(a)]g&#39;(x)
 \]</span></p>
-<h2 id="part-b">Part B</h2>
-<h3 id="exercise-1.5.1">Exercise 1.5.1</h3>
-<p>设函数 <span class="math inline">\(f:\mathbb R\to\mathbb R\)</span>
-满足对任意的 <span class="math inline">\(x_1,x_2\in\mathbb R\)</span>,
-<span class="math inline">\(f(x_1+x_2)=f(x_1)+f(x_2)\)</span>, 并且
-<span class="math inline">\(f\)</span> 在 <span
-class="math inline">\(x=0\)</span> 处连续, 证明: <span
-class="math inline">\(f\)</span> 在 <span class="math inline">\(\mathbb
-R\)</span> 上连续.</p>
-<h4 id="solution-6">Solution</h4>
-<p>根据 <span class="math inline">\(f\)</span> 的性质易得 <span
-class="math inline">\(f(0)=0\)</span> 且 <span
-class="math inline">\(f(x)=-f(-x)\)</span>.</p>
-<p>因为 <span class="math inline">\(f\)</span> 在 <span
-class="math inline">\(x=0\)</span> 处连续, 故 <span
-class="math inline">\(\forall\varepsilon&gt;0\)</span>, <span
-class="math inline">\(\exists\delta &gt;0\)</span> 使得当 <span
-class="math inline">\(|x-0|&lt;\delta\)</span> 时有 <span
+<h4 id="proof-1">Proof</h4>
+<p>Define <span class="math display">\[
+h(t)=[f(b)-f(a)]g(t)-[g(b)-g(a)]f(t)
+\]</span> Then we need to show <span
+class="math inline">\(h&#39;(x)=0\)</span> for some <span
+class="math inline">\(x\in(a,b)\)</span>.</p>
+<p>Since <span
+class="math inline">\(h(a)=f(b)g(a)-f(a)g(b)=h(b)\)</span>. If <span
+class="math inline">\(h\)</span> is constant, the conclusion holds for
+every <span class="math inline">\(x\in(a,b)\)</span>. If <span
+class="math inline">\(h(t)&gt;h(a)\)</span> for some <span
+class="math inline">\(t\in(a,b)\)</span>. Let <span
+class="math inline">\(x\)</span> be a point which attains its maximum.
+Since <span class="math inline">\(x\in(a,b)\)</span>, Lemma 1 shows that
+<span class="math inline">\(h&#39;(x)=0\)</span>. If <span
+class="math inline">\(h(t)&lt;h(a)\)</span>, the theorem holds similarly
+if we choose <span class="math inline">\(x\in(a,b)\)</span> which
+attains its minimum.</p>
+<h3 id="theorem-2-lagrange-mean-value-theorem">Theorem 2 (Lagrange Mean
+Value Theorem)</h3>
+<p>If <span class="math inline">\(f\)</span> is continuous function on
+<span class="math inline">\([a,b]\)</span> which is differentiable on
+<span class="math inline">\((a,b)\)</span>, then there exists a point
+<span class="math inline">\(x\in(a,b)\)</span> such that <span
 class="math display">\[
-|f(x)|&lt;\varepsilon
-\]</span> 故对任意的 <span class="math inline">\(x_0\in\mathbb
-R\)</span> 及 <span class="math inline">\(\varepsilon&gt;0\)</span>, 取
-<span class="math inline">\(\delta\)</span> 使得当 <span
-class="math inline">\(|x|&lt;\delta\)</span> 时有 <span
-class="math inline">\(|f(x)|&lt;\varepsilon\)</span>, 则当 <span
-class="math inline">\(|x-x_0|&lt;\delta\)</span> 时有 <span
-class="math display">\[
-|f(x)-f(x_0)|=|f(x-x_0)|&lt;\varepsilon
-\]</span> 即 <span class="math inline">\(f\)</span> 在 <span
-class="math inline">\(\mathbb{R}\)</span> 上连续.</p>
-<h3 id="exercise-1.5.2">Exercise 1.5.2</h3>
-<p>设 <span class="math inline">\(f\in C[a,+\infty)\)</span>, 并且 <span
-class="math inline">\(\lim\limits_{x\to+\infty}f(x)\)</span> 存在, 证明
-<span class="math inline">\(f\)</span> 在 <span
-class="math inline">\([a,+\infty)\)</span> 上有界.</p>
-<h4 id="solution-7">Solution</h4>
-<p>设 <span class="math inline">\(b&gt;a\)</span>, 则 <span
-class="math inline">\(f\)</span> 在 <span
-class="math inline">\([a,b]\)</span> 上连续, 故 <span
-class="math inline">\(f([a,b])\)</span> 有界. 又 <span
-class="math inline">\(\lim_{x\to+\infty}f(x)\)</span> 存在, 即 <span
-class="math inline">\(f\)</span> 在 <span
-class="math inline">\([a,+\infty)\)</span> 上有界.</p>
-<h3 id="exercise-1.5.3-1">Exercise 1.5.3</h3>
-<p>设 <span class="math inline">\(f\in C(a,b)\)</span>, 并且 <span
-class="math inline">\(f(a+0)\)</span> 与 <span
-class="math inline">\(f(b-0)\)</span> 存在 (包括极限为无穷大) 且异号,
-证明: 在 <span class="math inline">\((a,b)\)</span> 内至少存在一点 <span
-class="math inline">\(\xi\)</span>, 使 <span
-class="math inline">\(f(\xi)=0\)</span>.</p>
-<h4 id="solution-8">Solution</h4>
-<p>不妨设 <span class="math inline">\(\lim_{x\to
-a^+}f(x)=m&gt;0,\lim_{x\to b^-}f(x)=n&lt;0\)</span>. 任取 <span
-class="math inline">\(0&lt;\varepsilon_1&lt;m\)</span>, 存在 <span
-class="math inline">\(\delta_1&gt;0\)</span> 使得当 <span
-class="math inline">\(x\in(a,a+\delta_1)\)</span> 时有 <span
-class="math display">\[
-0&lt;m-\varepsilon_1&lt;f(x)&lt;m+\varepsilon_1
-\]</span> 同理, 任取 <span
-class="math inline">\(0&lt;\varepsilon_2&lt;-n\)</span>, 存在 <span
-class="math inline">\(\delta_2&gt;0\)</span> 使得当 <span
-class="math inline">\(x\in(b-\delta_2,b)\)</span> 时有 <span
-class="math display">\[
-f(x)&lt;n+\varepsilon_2&lt;0
-\]</span> 令 <span
-class="math inline">\(x_1\in(a,a+\delta_1),x_2\in(b-\delta_2,b)\)</span>.
-则 <span class="math inline">\(f\)</span> 在 <span
-class="math inline">\([x_1,x_2]\)</span> 处连续且 <span
-class="math inline">\(f(x_1)&gt;0,f(x_2)&lt;0\)</span>. 故存在一点 <span
-class="math inline">\(\xi\in[x_1,x_2]\)</span> 使得 <span
-class="math inline">\(f(\xi)=0\)</span>.</p>
+f(b)-f(a)=(b-a)f&#39;(x)
+\]</span></p>
+<h4 id="proof-2">Proof</h4>
+<p>Take <span class="math inline">\(g(x)=x\)</span> in Theorem 1.</p>
+<h3 id="theorem-3-lhôpitals-rule">Theorem 3 (L'Hôpital's rule)</h3>
+<p>Suppose <span class="math inline">\(f\)</span> and <span
+class="math inline">\(g\)</span> are real and differentiable in <span
+class="math inline">\((a,b)\)</span>, and <span
+class="math inline">\(g&#39;(x)\neq 0\)</span> for all <span
+class="math inline">\(x\in(a,b)\)</span>, where <span
+class="math inline">\(-\infty\leq a&lt;b\leq+\infty\)</span>. Suppose
+<span class="math display">\[
+\dfrac{f&#39;(x)}{g&#39;(x)}\to A \  \ \mathrm{as} \ \ x\to a
+\]</span> If <span class="math display">\[
+f(x)\to 0\ \ \mathrm{and} \ \ g(x)\to 0 \ \ \mathrm{as} \ \ x\to a
+\  (1)
+\]</span> or if <span class="math display">\[
+g(x)\to+\infty  \ \ \ \mathrm{ as} \ \ \ x\to a \ (2)
+\]</span> then <span class="math display">\[
+\dfrac{f(x)}{g(x)}\to A \ \ \ \mathrm{as}  \ \ \ x\to a
+\]</span> s</p>
 ]]></content>
-      <categories>
-        <category>Principle of mathematical analysis</category>
-      </categories>
       <tags>
-        <tag>Functions</tag>
         <tag>Continuous</tag>
-        <tag>Limits</tag>
+        <tag>Functions</tag>
+        <tag>Differentiation</tag>
       </tags>
   </entry>
   <entry>
@@ -1826,375 +2057,92 @@ p_n^{(k)}(x_0)=k!a_k
         <category>Principle of mathematical analysis</category>
       </categories>
       <tags>
-        <tag>Differentiation</tag>
-        <tag>Functions</tag>
         <tag>Continuous</tag>
+        <tag>Functions</tag>
         <tag>Limits</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Mathematical Analysis Exercise Chap. 2 Sec. 1</title>
-    <url>/2022/10/30/MA_C2_S1/</url>
-    <content><![CDATA[<h2 id="part-b">Part B</h2>
-<h3 id="exercise-1">Exercise 1</h3>
-<p>若函数 <span class="math inline">\(f\)</span> 在 <span
-class="math inline">\(x=0\)</span> 处连续, 且 <span
-class="math inline">\(\lim_{x\to0}\dfrac{f(x)}{x}\)</span> 存在, 证明
-<span class="math inline">\(f\)</span> 在 <span
-class="math inline">\(x=0\)</span> 处可导.</p>
-<h4 id="solution">Solution</h4>
-<p>因为 <span class="math inline">\(\lim_{x\to 0}
-\dfrac{f(x)}{x}\)</span> 存在, 不妨设 <span
-class="math inline">\(\lim_{x\to 0}\dfrac{f(x)}{x}=a\)</span>, 则 <span
-class="math inline">\(f(x)\)</span> 是 <span class="math inline">\(x\to
-0\)</span> 时的同阶或高阶无穷小. 即 <span
-class="math inline">\(\lim_{x\to 0} f(x)=f(0)=0\)</span>. 于是 <span
-class="math display">\[
-f&#39;(0)=\lim_{x\to 0}\dfrac{f(x)-f(0)}{x-0}=a
-\]</span> 即 <span class="math inline">\(f\)</span> 在 <span
-class="math inline">\(x=0\)</span> 处可导.</p>
-<h3 id="exercise-2">Exercise 2</h3>
-<p>若 <span class="math inline">\(f\)</span> 是定义在 <span
-class="math inline">\(\mathbb{R}\)</span> 上的函数, <span
-class="math inline">\(f(x)\neq 0\)</span>, <span
-class="math inline">\(f(0)=1\)</span>, 且 <span class="math display">\[
-\forall x,y\in\mathbb{R},f(x+y)=f(x)f(y).
-\]</span> 证明: <span class="math inline">\(f\)</span> 在 <span
-class="math inline">\(\mathbb R\)</span> 上可导, 且 <span
-class="math inline">\(f&#39;(x)=f(x)\)</span>.</p>
-<h4 id="solution-1">Solution</h4>
-<p>令 <span class="math inline">\(x=y=0\)</span> 可得 <span
-class="math display">\[
-f(0)^2-f(0)=0
-\]</span> 因为 <span class="math inline">\(f(x)\neq 0\)</span>, 故 <span
-class="math inline">\(f(0)=1\)</span>.</p>
-<p>于是 <span class="math inline">\(\forall x_0\in \mathbb R\)</span>,
-有 <span class="math display">\[
-f&#39;(x_0)=\lim_{\Delta x\to 0}\dfrac{f(x_0+\Delta x)-f(x_0)}{\Delta
-x}=f(x_0)\lim_{\Delta x\to 0}\dfrac{f(\Delta x)-1}{\Delta x}=f(x_0)\cdot
-f&#39;(0)=f(x_0)
-\]</span></p>
-<h3 id="exercise-3">Exercise 3</h3>
-<p>设函数 <span class="math inline">\(f\)</span> 在 <span
-class="math inline">\(x=a\)</span> 处可导, 且 <span
-class="math inline">\(f(a)\neq 0\)</span>. 试求 <span
-class="math display">\[
-\lim_{n\to\infty}\left[\dfrac{f\left(a+\frac{1}{n}\right)}{f(a)}\right]^n
-\]</span></p>
-<h4 id="solution-2">Solution</h4>
-<p><span class="math display">\[
-\begin{aligned}
-\lim_{n\to\infty}\left[\dfrac{f\left(a+\frac{1}{n}\right)}{f(a)}\right]^n&amp;=\lim_{n\to
-\infty}\mathrm{e}^{n\ln f(a+\frac{1}{n})-\ln f(a)}=\mathrm{e}^{[\ln
-f(a)]&#39;}=\mathrm{e}^{\frac{f&#39;(a)}{f(a)}}
-\end{aligned}
-\]</span></p>
-<h3 id="exercise-4">Exercise 4</h3>
-<p>设曲线 <span class="math inline">\(f(x)\)</span> 与 <span
-class="math inline">\(\sin x\)</span> 在原点处相切, 试求极限 <span
-class="math display">\[
-\lim_{n\to \infty}n^{\frac{1}{2}}\sqrt{f\left(\dfrac{2}{n}\right)}
-\]</span></p>
-<h4 id="solution-3">Solution</h4>
-<p>因为 <span class="math inline">\(f(x)\)</span> 与 <span
-class="math inline">\(\sin x\)</span> 在原点处相切, 故 <span
-class="math inline">\(f(0)=0\)</span> 且 <span
-class="math inline">\(f&#39;(0)=\sin&#39;(0)=1\)</span>. 于是 <span
-class="math display">\[
-\begin{aligned}
-\lim_{n\to
-\infty}n^{\frac{1}{2}}\sqrt{f\left(\dfrac{2}{n}\right)}&amp;=\lim_{n\to\infty}\sqrt{nf\left(\dfrac{2}{n}\right)}\\&amp;=\sqrt{\lim_{n\to\infty}n\dfrac{f(\frac{2}{n})-f(0)}{\frac{2}{n}}\cdot\dfrac{2}{n}}\\&amp;=\sqrt{2\cdot
-f&#39;(0)}=\sqrt{2}
-\end{aligned}
-\]</span></p>
-<h3 id="exercise-5">Exercise 5</h3>
-<p>设 <span class="math inline">\(n\in\mathbb{N}_+\)</span>, 试讨论函数
-<span class="math display">\[
-f(x)=\left\{\begin{aligned}&amp;x^n\sin\dfrac{1}{x},x\neq
-0\\&amp;0\quad\quad\quad\ , x=0\end{aligned}\right.
-\]</span> 在 <span class="math inline">\(x=0\)</span> 处的连续性,
-可导性以及 <span class="math inline">\(f&#39;(x)\)</span> 在 <span
-class="math inline">\(x=0\)</span> 处的连续性.</p>
-<h4 id="solution-4">Solution</h4>
-<p>因为 <span class="math display">\[
-\lim_{x\to 0}f(x)=\left|x^n\sin \dfrac{1}{x}\right|\leq |x^n|=0=f(0)
-\]</span> 故 <span class="math inline">\(f(x)\)</span> 在 <span
-class="math inline">\(x=0\)</span> 处连续.</p>
-<p>又因为当 <span class="math inline">\(n\geq 2\)</span> 时 <span
-class="math display">\[
-|f&#39;(0)|=\left|\lim_{x\to 0}\dfrac{f(x)}{x}\right|=\lim_{x\to
-0}\left|x^{n-1}\sin\dfrac{1}{x}\right|\leq|x^{n-1}|=0
-\]</span> 故当 <span class="math inline">\(n\geq 2\)</span> 时, <span
-class="math inline">\(f&#39;(x)\)</span> 在 <span
-class="math inline">\(x=0\)</span> 处连续.</p>
-<p>而当 <span class="math inline">\(n=1\)</span> 时, <span
-class="math display">\[
-\lim_{x\to 0}\dfrac{f(x)}{x}=\lim_{x\to 0}\sin\dfrac{1}{x}
-\]</span> 极限不存在, 故 <span class="math inline">\(n=1\)</span> 时,
-<span class="math inline">\(f&#39;(x)\)</span> 在 <span
-class="math inline">\(x=0\)</span> 处不连续.</p>
-<h3 id="exercise-6">Exercise 6</h3>
-<p>设 <span class="math inline">\(f\in C[a,b],f(a)=f(b)=0\)</span>, 且
-<span class="math inline">\(f&#39;_+(a)f&#39;_-(b)&gt;0\)</span>, 证明:
-至少存在一点 <span class="math inline">\(\xi\in(a,b)\)</span>, 使得
-<span class="math inline">\(f(\xi)=0\)</span>.</p>
-<h4 id="solution-5">Solution</h4>
-<p>不妨假设 <span class="math inline">\(f&#39;_+(a)\)</span> 和 <span
-class="math inline">\(f&#39;_-(b)\)</span> 均 <span
-class="math inline">\(&gt;0\)</span>, 则 <span class="math display">\[
-f&#39;_+(a)=\lim_{x\to a^+}\dfrac{f(x)}{x-a}&gt;0
-\]</span> 即 <span class="math inline">\(\lim_{x\to a^+}
-f(x)&gt;0\)</span>. 同理可得 <span class="math inline">\(\lim_{x\to
-b^{-}} f(x)&lt;0\)</span>. 即存在 <span
-class="math inline">\(x_1,x_2\in(a,b)\)</span> 使得 <span
-class="math inline">\(f(x_1)&gt;0\)</span> 且 <span
-class="math inline">\(f(x_2)&lt;0\)</span>. 由零点存在定理知存在 <span
-class="math inline">\(\xi\in(a,b)\)</span> 使得 <span
-class="math inline">\(f(\xi)=0\)</span>.</p>
-<p>当 <span class="math inline">\(f&#39;_+(a)\)</span> 和 <span
-class="math inline">\(f&#39;_-(b)\)</span> 均 <span
-class="math inline">\(&lt;0\)</span> 时类似.</p>
-]]></content>
-      <categories>
-        <category>Principle of mathematical analysis</category>
-      </categories>
-      <tags>
         <tag>Differentiation</tag>
-        <tag>Functions</tag>
-        <tag>Continuous</tag>
-        <tag>Limits</tag>
       </tags>
   </entry>
   <entry>
-    <title>Mean Value Theorem</title>
-    <url>/2022/10/19/Mean_Value_Theorem/</url>
-    <content><![CDATA[<h3 id="definition-of-local-maximum">Definition of local maximum</h3>
-<p>Let <span class="math inline">\(f\)</span> be a real function defined
-on a metric space <span class="math inline">\(X\)</span>. We say that
-<span class="math inline">\(f\)</span> has a <em>local maximum</em> at a
-point <span class="math inline">\(p\in X\)</span> if there exists <span
-class="math inline">\(\delta &gt;0\)</span> such that <span
-class="math inline">\(f(q)\leq f(p)\)</span> for all <span
-class="math inline">\(q\in X\)</span> if <span
-class="math inline">\(d(p,q)&lt;\delta\)</span>.</p>
-<h3 id="lemma-1-fermat-theorem">Lemma 1 (Fermat Theorem)</h3>
-<p>Let <span class="math inline">\(f\)</span> be defined on <span
-class="math inline">\([a,b]\)</span>, if <span
-class="math inline">\(f\)</span> has a local maximum at a point <span
-class="math inline">\(x\in(a,b)\)</span>, and if <span
-class="math inline">\(f&#39;(x)\)</span> exists, then <span
-class="math inline">\(f&#39;(x)=0\)</span>.</p>
-<h4 id="proof">Proof</h4>
-<p>Choose <span class="math inline">\(\delta &gt;0\)</span> such that
-<span class="math inline">\(f(q)\leq f(x)\)</span> if <span
-class="math inline">\(q\in[a,b]\)</span> and <span
-class="math inline">\(d(q,x)&lt;\delta\)</span>, so that <span
-class="math display">\[
-a&lt;x-\delta&lt;x&lt;x+\delta&lt;b
-\]</span> If <span class="math inline">\(x-\delta&lt;t&lt;x\)</span>,
-then <span class="math display">\[
-\dfrac{f(t)-f(x)}{t-x}\geq 0
-\]</span> Letting <span class="math inline">\(t\to x\)</span>, we see
-that <span class="math inline">\(f&#39;(x)\geq 0\)</span>.</p>
-<p>If <span class="math inline">\(x&lt;t&lt;x+\delta\)</span>, then
-<span class="math display">\[
-\dfrac{f(t)-f(x)}{t-x}\leq0
-\]</span> Letting <span class="math inline">\(t\to x\)</span>, we see
-that <span class="math inline">\(f&#39;(x)\leq 0\)</span>.</p>
-<p>Hence <span class="math inline">\(f&#39;(x)=0\)</span>.</p>
-<h3 id="theorem-1-cauchy-mean-value-theorem">Theorem 1 (Cauchy Mean
-Value Theorem)</h3>
-<p>If <span class="math inline">\(f\)</span> and <span
-class="math inline">\(g\)</span> are continuous real functions on <span
-class="math inline">\([a.b]\)</span> which are differentiable on <span
-class="math inline">\((a,b)\)</span>. Then there exists <span
-class="math inline">\(x\in(a,b)\)</span> such that <span
-class="math display">\[
-[g(b)-g(a)]f&#39;(x)=[f(b)-f(a)]g&#39;(x)
-\]</span></p>
-<h4 id="proof-1">Proof</h4>
-<p>Define <span class="math display">\[
-h(t)=[f(b)-f(a)]g(t)-[g(b)-g(a)]f(t)
-\]</span> Then we need to show <span
-class="math inline">\(h&#39;(x)=0\)</span> for some <span
-class="math inline">\(x\in(a,b)\)</span>.</p>
-<p>Since <span
-class="math inline">\(h(a)=f(b)g(a)-f(a)g(b)=h(b)\)</span>. If <span
-class="math inline">\(h\)</span> is constant, the conclusion holds for
-every <span class="math inline">\(x\in(a,b)\)</span>. If <span
-class="math inline">\(h(t)&gt;h(a)\)</span> for some <span
-class="math inline">\(t\in(a,b)\)</span>. Let <span
-class="math inline">\(x\)</span> be a point which attains its maximum.
-Since <span class="math inline">\(x\in(a,b)\)</span>, Lemma 1 shows that
-<span class="math inline">\(h&#39;(x)=0\)</span>. If <span
-class="math inline">\(h(t)&lt;h(a)\)</span>, the theorem holds similarly
-if we choose <span class="math inline">\(x\in(a,b)\)</span> which
-attains its minimum.</p>
-<h3 id="theorem-2-lagrange-mean-value-theorem">Theorem 2 (Lagrange Mean
-Value Theorem)</h3>
-<p>If <span class="math inline">\(f\)</span> is continuous function on
-<span class="math inline">\([a,b]\)</span> which is differentiable on
-<span class="math inline">\((a,b)\)</span>, then there exists a point
-<span class="math inline">\(x\in(a,b)\)</span> such that <span
-class="math display">\[
-f(b)-f(a)=(b-a)f&#39;(x)
-\]</span></p>
-<h4 id="proof-2">Proof</h4>
-<p>Take <span class="math inline">\(g(x)=x\)</span> in Theorem 1.</p>
-<h3 id="theorem-3-lhôpitals-rule">Theorem 3 (L'Hôpital's rule)</h3>
-<p>Suppose <span class="math inline">\(f\)</span> and <span
-class="math inline">\(g\)</span> are real and differentiable in <span
-class="math inline">\((a,b)\)</span>, and <span
-class="math inline">\(g&#39;(x)\neq 0\)</span> for all <span
-class="math inline">\(x\in(a,b)\)</span>, where <span
-class="math inline">\(-\infty\leq a&lt;b\leq+\infty\)</span>. Suppose
-<span class="math display">\[
-\dfrac{f&#39;(x)}{g&#39;(x)}\to A \  \ \mathrm{as} \ \ x\to a
-\]</span> If <span class="math display">\[
-f(x)\to 0\ \ \mathrm{and} \ \ g(x)\to 0 \ \ \mathrm{as} \ \ x\to a
-\  (1)
-\]</span> or if <span class="math display">\[
-g(x)\to+\infty  \ \ \ \mathrm{ as} \ \ \ x\to a \ (2)
-\]</span> then <span class="math display">\[
-\dfrac{f(x)}{g(x)}\to A \ \ \ \mathrm{as}  \ \ \ x\to a
-\]</span> s</p>
+    <title></title>
+    <url>/2022/11/04/MA_C2_A3/</url>
+    <content><![CDATA[
 ]]></content>
-      <tags>
-        <tag>Differentiation</tag>
-        <tag>Functions</tag>
-        <tag>Continuous</tag>
-      </tags>
   </entry>
   <entry>
-    <title>Rudin Chap.3 Exercise 1-5</title>
-    <url>/2022/10/16/RD_C3_E1/</url>
+    <title>Rudin Chap.4 Exercise 1-3</title>
+    <url>/2022/10/19/RD_C4_E1/</url>
     <content><![CDATA[<h3 id="exercise-1">Exercise 1</h3>
-<p>Prove that <span class="math inline">\(\{s_n\}\)</span> converges
-implies that <span class="math inline">\(\{|s_n|\}\)</span> converges.
-Is the converse true?</p>
+<p>Suppose <span class="math inline">\(f\)</span> is a real function
+defined on <span class="math inline">\(\mathbb R^1\)</span> which
+satisfies <span class="math display">\[
+\lim_{h\to 0}[f(x+h)-f(x-h)]=0
+\]</span> for every <span
+class="math inline">\(x\in\mathbb{R}^1\)</span>. Does this imply that
+<span class="math inline">\(f\)</span> is continuous?</p>
 <h4 id="solution">Solution</h4>
-<p>Suppose <span
-class="math inline">\(\lim\limits_{n\to\infty}s_n=s\)</span>.</p>
-<p><span class="math inline">\(\forall \varepsilon&gt;0,\exists
-N\in\mathbb{N}^+\)</span> such that <span
-class="math inline">\(n&gt;N\)</span> implies <span
-class="math inline">\(||s_n|-|s||&lt;|s_n-s|&lt;\varepsilon\)</span>.
-Therefore <span class="math inline">\(\{|s_n|\}\)</span> converges to
-<span class="math inline">\(|s|\)</span>.</p>
-<p>The converse statement is false. For example, the sequence <span
-class="math inline">\(s_n=(-1)^n\)</span> diverges while <span
-class="math inline">\(\{|s_n|\}\)</span> converges to <span
-class="math inline">\(1\)</span>.</p>
-<h3 id="exercise-2">Exercise 2</h3>
-<p>Calculate <span
-class="math inline">\(\lim\limits_{n\to\infty}\left(\sqrt{n^2+n}-n\right)\)</span>.</p>
-<h4 id="solution-1">Solution</h4>
-<p><span class="math display">\[
-\left(\sqrt{n^2+n}-n\right)=\dfrac{\left(\sqrt{n^2+n}-n\right)\left(\sqrt{n^2+n}+n\right)}{\sqrt{n^2+n}+n}=\dfrac{n}{\sqrt{n^2+n}+n}
-\]</span></p>
-<p>Thus <span
-class="math inline">\(\lim\limits_{n\to\infty}\left(\sqrt{n^2+n}-n\right)=\dfrac{1}{2}\)</span></p>
-<h3 id="exercise-3">Exercise 3</h3>
-<p>If <span class="math inline">\(s_1=\sqrt{2}\)</span>, and <span
+<p>The statement is actually false.</p>
+<p>Let <span class="math inline">\(f:\mathbb R\to\mathbb R\)</span> be
+defined as <span class="math inline">\(f(0)=1\)</span> and <span
+class="math inline">\(f(x)=0\)</span> for <span
+class="math inline">\(x\in\mathbb{R}\backslash\{0\}\)</span>. Then for
+any <span class="math inline">\(x\in \mathbb{R}\)</span> the condition
+holds. However, <span class="math inline">\(f\)</span> is not continuous
+at <span class="math inline">\(0\)</span>. To prove this, let <span
+class="math inline">\(\varepsilon=\dfrac{1}{2}\)</span>, then for any
+<span class="math inline">\(\delta &gt;0\)</span> and <span
+class="math inline">\(0&lt;|x-0|&lt;\delta\)</span> we have <span
 class="math display">\[
-s_{n+1}=\sqrt{2+\sqrt{s_n}}\quad(n=1,2,3,\dots)
-\]</span></p>
-<p>Prove that <span class="math inline">\(\{s_n\}\)</span> converges and
-that <span class="math inline">\(s_n&lt;2\)</span> for <span
-class="math inline">\(n=1,2,3,\dots\)</span></p>
-<h4 id="solution-2">Solution</h4>
-<p>By <span class="math inline">\(s_1=\sqrt{2}\)</span> we have <span
-class="math display">\[
-s_{n+1}=\sqrt{\sqrt{s_n}+2}&lt;\sqrt{2+2}=2 \ (n=1,2,3,\dots)
-\]</span> Also we can show that <span
-class="math inline">\(s_n&gt;0\)</span> for <span
-class="math inline">\(n=1,2,3,\dots\)</span> by the similar argument.
-Since <span class="math inline">\(s_n\)</span> is bounded, and <span
-class="math display">\[
-s_{n+1}-s_n=\sqrt{2+\sqrt{s_n}}-s_n&gt;0
-\]</span></p>
-<h3 id="exercise-4">Exercise 4</h3>
-<p>Find the upper and lower limits of the sequence <span
-class="math inline">\(\{s_n\}\)</span> defined by <span
-class="math display">\[
-s_1=0,s_{2m}=\dfrac{s_{2m-1}}{2},s_{2m+1}=\dfrac12+s_{2m}
-\]</span></p>
-<h4 id="solution-3">Solution</h4>
-<p>It's easy to figure out that <span
-class="math inline">\(s_{2m}=\dfrac{2^{m-1}-1}{2^m}\)</span> and <span
-class="math inline">\(s_{2m+1}=\dfrac{2^m-1}{2^m}\)</span>.</p>
-<p>Therefore <span class="math inline">\(\lim\limits_{n\to\infty}\sup
-s_n=1,\lim\limits_{n\to\infty}\inf s_n=\dfrac{1}{2}\)</span></p>
-<h3 id="exercise-5">Exercise 5</h3>
-<p>For any two real sequences <span
-class="math inline">\(\{a_n\}\)</span> and <span
-class="math inline">\(\{b_n\}\)</span>, prove that <span
-class="math display">\[
-\lim_{n\to\infty}\sup(a_n+b_n)\leq\lim_{n\to\infty}\sup
-a_n+\lim_{n\to\infty}\sup b_n,
-\]</span> provided the sum on the right is not form of <span
-class="math inline">\(\infty-\infty\)</span>.</p>
-<h4 id="solution-4">Solution</h4>
-<p>Let <span class="math inline">\(s=\lim\limits_{n\to \infty}
-\sup(a_n+b_n),a=\lim\limits_{n\to\infty}\sup
-a_n,b=\lim\limits_{n\to\infty}\sup b_n\)</span>.</p>
-<p>If <span class="math inline">\(a=+\infty\)</span> or <span
-class="math inline">\(b=+\infty\)</span>, the inequality holds trivially
-immediately.</p>
-<p>If <span class="math inline">\(a&lt;+\infty\)</span> and <span
-class="math inline">\(b&lt;+\infty\)</span>. Then there exists a
-subsequence <span class="math inline">\(\{a_{n_k}+b_{n_k}\}\)</span>
-such that <span class="math display">\[
-s=\lim_{k\to \infty}(a_{n_k}+b_{n_k})
-\]</span></p>
-<ul>
-<li>If any of <span class="math inline">\(\{a_{n_k}\}\)</span> and <span
-class="math inline">\(\{b_{n_k}\}\)</span> converges, say <span
-class="math inline">\(\{a_{n_k}\}\)</span>, it's easily to show that
-<span class="math inline">\(\{b_{n_k}\}\)</span> converges by the
-equation <span
-class="math inline">\(b_{n_k}=(a_{n_k}+b_{n_k})-a_{n_k}\)</span>.
-Thus</li>
-</ul>
-<p><span class="math display">\[
-s=\lim_{k\to\infty}(a_{n_k}+b_{n_k})=\lim_{k\to\infty}a_{n_k}+\lim_{k\to\infty}b_{n_k}\leq
-a+b
-\]</span></p>
-<ul>
-<li>If both <span class="math inline">\(\{a_{n_k}\}\)</span> and <span
-class="math inline">\(\{b_{n_k}\}\)</span> diverge but <span
-class="math inline">\(\{a_{n_k}+b_{n_k}\}\)</span> converges, then we
-consider</li>
-</ul>
-<p><span class="math display">\[
-\alpha=\lim_{k\to\infty}\sup a_{n_k}\ \mathrm{and} \
-\beta=\lim_{k\to\infty} \sup b_{n_k}
-\]</span></p>
-<p>By definition 3.16 we have <span class="math display">\[
-\lim_{k\to\infty} \sup a_{n_k}\leq\lim_{n\to\infty}\sup a_n \
-\mathrm{and} \ \lim_{k\to\infty}\sup b_{n_k}\leq\lim_{n\to\infty} \sup
-b_n
-\]</span> so that <span class="math inline">\(\alpha\)</span> and <span
-class="math inline">\(\beta\)</span> are finite. By theorem 3.17(a)
-again, there exists a subsequence <span
-class="math inline">\(\{a_{n_{k_j}}\}\)</span> of the divergent sequence
-<span class="math inline">\(\{a_{n_k}\}\)</span> such that <span
-class="math display">\[
-\lim_{j\to\infty}a_{n_{k_j}}=\alpha
-\]</span> It's obvious that <span
-class="math inline">\(b_{n_{k_j}}\)</span> also converges since <span
-class="math display">\[
-s=\lim_{k\to\infty}(a_{n_k}+b_{n_k})=\lim_{j\to\infty}(a_{n_{k_j}}+b_{n_{k_j}})\Rightarrow\lim_{j\to\infty}b_{n_{k_j}}=s-\alpha
-\]</span> Therefore <span class="math display">\[
-s=\lim_{j\to\infty}(a_{n_{k_j}}+b_{n_{k_j}})\leq\alpha+\beta\leq a+b
+|f(x)-f(0)|=1&gt;\dfrac{1}{2}
 \]</span> This completes the proof.</p>
+<h3 id="exercise-2">Exercise 2</h3>
+<p>If <span class="math inline">\(f\)</span> is a continuous function of
+a metric space <span class="math inline">\(X\)</span> into a metric
+space <span class="math inline">\(Y\)</span>, prove that <span
+class="math display">\[
+f(\overline{E})\sub \overline{f(E)}
+\]</span> for every set <span class="math inline">\(E\sub X\)</span>.
+Show, by an example, that <span
+class="math inline">\(f(\overline{E})\)</span> can be a proper subset of
+<span class="math inline">\(\overline{f(E)}\)</span>.</p>
+<h4 id="solution-1">Solution</h4>
+<p>Since <span class="math inline">\(x\in E\)</span> implies that <span
+class="math inline">\(f(x)\in f(E)\subseteq \overline{f(E)}\)</span>. we
+have <span class="math inline">\(E\sub f^{-1}(\overline{f(E)})\)</span>.
+Then we have <span
+class="math inline">\(f^{-1}(\overline{f(E)})\)</span> is closed because
+<span class="math inline">\(\overline{f(E)}\)</span> is closed. Hence
+<span class="math inline">\(\overline{E}\subseteq
+f^{-1}(\overline{f(E)})\)</span>. We have <span
+class="math inline">\(f(\overline{E})\subseteq\overline{f(E)}\)</span>.</p>
+<p>Take <span
+class="math inline">\(f:\mathbb{R}\backslash\{0\}\to\mathbb{R},x\mapsto\dfrac{1}{x^2}\)</span>
+and <span class="math inline">\(E=\mathbb Z\)</span>, we have <span
+class="math inline">\(f(\overline{E})=\{1,\frac{1}{4},\cdots\}\)</span>.
+and <span
+class="math inline">\(\overline{f(E)}=\{0\}\cup\{1,\frac{1}{4},\cdots\}\)</span>.
+Therefore <span class="math inline">\(f(\overline{E})\)</span> is a
+proper subset of <span
+class="math inline">\(\overline{f(E)}\)</span>.</p>
+<h3 id="exercise-3">Exercise 3</h3>
+<p>Let <span class="math inline">\(f\)</span> be a continuous real
+function on a metric space <span class="math inline">\(X\)</span>. Let
+<span class="math inline">\(Z(f)\)</span> be the set of all <span
+class="math inline">\(p\in X\)</span> at which <span
+class="math inline">\(f(p)=0\)</span>. Prove that <span
+class="math inline">\(Z(f)\)</span> is closed.</p>
+<h4 id="solution-2">Solution</h4>
+<p>We have <span class="math inline">\(Z(f)=f^{-1}(\{0\})\)</span>.
+Since <span class="math inline">\(Z(f)\)</span> is closed because <span
+class="math inline">\(\{0\}\)</span> is closed.</p>
 ]]></content>
       <categories>
         <category>Principle of mathematical analysis</category>
       </categories>
       <tags>
+        <tag>Continuous</tag>
+        <tag>Functions</tag>
         <tag>Limits</tag>
-        <tag>Sequences</tag>
       </tags>
   </entry>
   <entry>
@@ -2356,79 +2304,135 @@ class="math display">\[
       </tags>
   </entry>
   <entry>
-    <title>Rudin Chap.4 Exercise 1-3</title>
-    <url>/2022/10/19/RD_C4_E1/</url>
+    <title>Rudin Chap.3 Exercise 1-5</title>
+    <url>/2022/10/16/RD_C3_E1/</url>
     <content><![CDATA[<h3 id="exercise-1">Exercise 1</h3>
-<p>Suppose <span class="math inline">\(f\)</span> is a real function
-defined on <span class="math inline">\(\mathbb R^1\)</span> which
-satisfies <span class="math display">\[
-\lim_{h\to 0}[f(x+h)-f(x-h)]=0
-\]</span> for every <span
-class="math inline">\(x\in\mathbb{R}^1\)</span>. Does this imply that
-<span class="math inline">\(f\)</span> is continuous?</p>
+<p>Prove that <span class="math inline">\(\{s_n\}\)</span> converges
+implies that <span class="math inline">\(\{|s_n|\}\)</span> converges.
+Is the converse true?</p>
 <h4 id="solution">Solution</h4>
-<p>The statement is actually false.</p>
-<p>Let <span class="math inline">\(f:\mathbb R\to\mathbb R\)</span> be
-defined as <span class="math inline">\(f(0)=1\)</span> and <span
-class="math inline">\(f(x)=0\)</span> for <span
-class="math inline">\(x\in\mathbb{R}\backslash\{0\}\)</span>. Then for
-any <span class="math inline">\(x\in \mathbb{R}\)</span> the condition
-holds. However, <span class="math inline">\(f\)</span> is not continuous
-at <span class="math inline">\(0\)</span>. To prove this, let <span
-class="math inline">\(\varepsilon=\dfrac{1}{2}\)</span>, then for any
-<span class="math inline">\(\delta &gt;0\)</span> and <span
-class="math inline">\(0&lt;|x-0|&lt;\delta\)</span> we have <span
-class="math display">\[
-|f(x)-f(0)|=1&gt;\dfrac{1}{2}
-\]</span> This completes the proof.</p>
+<p>Suppose <span
+class="math inline">\(\lim\limits_{n\to\infty}s_n=s\)</span>.</p>
+<p><span class="math inline">\(\forall \varepsilon&gt;0,\exists
+N\in\mathbb{N}^+\)</span> such that <span
+class="math inline">\(n&gt;N\)</span> implies <span
+class="math inline">\(||s_n|-|s||&lt;|s_n-s|&lt;\varepsilon\)</span>.
+Therefore <span class="math inline">\(\{|s_n|\}\)</span> converges to
+<span class="math inline">\(|s|\)</span>.</p>
+<p>The converse statement is false. For example, the sequence <span
+class="math inline">\(s_n=(-1)^n\)</span> diverges while <span
+class="math inline">\(\{|s_n|\}\)</span> converges to <span
+class="math inline">\(1\)</span>.</p>
 <h3 id="exercise-2">Exercise 2</h3>
-<p>If <span class="math inline">\(f\)</span> is a continuous function of
-a metric space <span class="math inline">\(X\)</span> into a metric
-space <span class="math inline">\(Y\)</span>, prove that <span
-class="math display">\[
-f(\overline{E})\sub \overline{f(E)}
-\]</span> for every set <span class="math inline">\(E\sub X\)</span>.
-Show, by an example, that <span
-class="math inline">\(f(\overline{E})\)</span> can be a proper subset of
-<span class="math inline">\(\overline{f(E)}\)</span>.</p>
+<p>Calculate <span
+class="math inline">\(\lim\limits_{n\to\infty}\left(\sqrt{n^2+n}-n\right)\)</span>.</p>
 <h4 id="solution-1">Solution</h4>
-<p>Since <span class="math inline">\(x\in E\)</span> implies that <span
-class="math inline">\(f(x)\in f(E)\subseteq \overline{f(E)}\)</span>. we
-have <span class="math inline">\(E\sub f^{-1}(\overline{f(E)})\)</span>.
-Then we have <span
-class="math inline">\(f^{-1}(\overline{f(E)})\)</span> is closed because
-<span class="math inline">\(\overline{f(E)}\)</span> is closed. Hence
-<span class="math inline">\(\overline{E}\subseteq
-f^{-1}(\overline{f(E)})\)</span>. We have <span
-class="math inline">\(f(\overline{E})\subseteq\overline{f(E)}\)</span>.</p>
-<p>Take <span
-class="math inline">\(f:\mathbb{R}\backslash\{0\}\to\mathbb{R},x\mapsto\dfrac{1}{x^2}\)</span>
-and <span class="math inline">\(E=\mathbb Z\)</span>, we have <span
-class="math inline">\(f(\overline{E})=\{1,\frac{1}{4},\cdots\}\)</span>.
-and <span
-class="math inline">\(\overline{f(E)}=\{0\}\cup\{1,\frac{1}{4},\cdots\}\)</span>.
-Therefore <span class="math inline">\(f(\overline{E})\)</span> is a
-proper subset of <span
-class="math inline">\(\overline{f(E)}\)</span>.</p>
+<p><span class="math display">\[
+\left(\sqrt{n^2+n}-n\right)=\dfrac{\left(\sqrt{n^2+n}-n\right)\left(\sqrt{n^2+n}+n\right)}{\sqrt{n^2+n}+n}=\dfrac{n}{\sqrt{n^2+n}+n}
+\]</span></p>
+<p>Thus <span
+class="math inline">\(\lim\limits_{n\to\infty}\left(\sqrt{n^2+n}-n\right)=\dfrac{1}{2}\)</span></p>
 <h3 id="exercise-3">Exercise 3</h3>
-<p>Let <span class="math inline">\(f\)</span> be a continuous real
-function on a metric space <span class="math inline">\(X\)</span>. Let
-<span class="math inline">\(Z(f)\)</span> be the set of all <span
-class="math inline">\(p\in X\)</span> at which <span
-class="math inline">\(f(p)=0\)</span>. Prove that <span
-class="math inline">\(Z(f)\)</span> is closed.</p>
+<p>If <span class="math inline">\(s_1=\sqrt{2}\)</span>, and <span
+class="math display">\[
+s_{n+1}=\sqrt{2+\sqrt{s_n}}\quad(n=1,2,3,\dots)
+\]</span></p>
+<p>Prove that <span class="math inline">\(\{s_n\}\)</span> converges and
+that <span class="math inline">\(s_n&lt;2\)</span> for <span
+class="math inline">\(n=1,2,3,\dots\)</span></p>
 <h4 id="solution-2">Solution</h4>
-<p>We have <span class="math inline">\(Z(f)=f^{-1}(\{0\})\)</span>.
-Since <span class="math inline">\(Z(f)\)</span> is closed because <span
-class="math inline">\(\{0\}\)</span> is closed.</p>
+<p>By <span class="math inline">\(s_1=\sqrt{2}\)</span> we have <span
+class="math display">\[
+s_{n+1}=\sqrt{\sqrt{s_n}+2}&lt;\sqrt{2+2}=2 \ (n=1,2,3,\dots)
+\]</span> Also we can show that <span
+class="math inline">\(s_n&gt;0\)</span> for <span
+class="math inline">\(n=1,2,3,\dots\)</span> by the similar argument.
+Since <span class="math inline">\(s_n\)</span> is bounded, and <span
+class="math display">\[
+s_{n+1}-s_n=\sqrt{2+\sqrt{s_n}}-s_n&gt;0
+\]</span></p>
+<h3 id="exercise-4">Exercise 4</h3>
+<p>Find the upper and lower limits of the sequence <span
+class="math inline">\(\{s_n\}\)</span> defined by <span
+class="math display">\[
+s_1=0,s_{2m}=\dfrac{s_{2m-1}}{2},s_{2m+1}=\dfrac12+s_{2m}
+\]</span></p>
+<h4 id="solution-3">Solution</h4>
+<p>It's easy to figure out that <span
+class="math inline">\(s_{2m}=\dfrac{2^{m-1}-1}{2^m}\)</span> and <span
+class="math inline">\(s_{2m+1}=\dfrac{2^m-1}{2^m}\)</span>.</p>
+<p>Therefore <span class="math inline">\(\lim\limits_{n\to\infty}\sup
+s_n=1,\lim\limits_{n\to\infty}\inf s_n=\dfrac{1}{2}\)</span></p>
+<h3 id="exercise-5">Exercise 5</h3>
+<p>For any two real sequences <span
+class="math inline">\(\{a_n\}\)</span> and <span
+class="math inline">\(\{b_n\}\)</span>, prove that <span
+class="math display">\[
+\lim_{n\to\infty}\sup(a_n+b_n)\leq\lim_{n\to\infty}\sup
+a_n+\lim_{n\to\infty}\sup b_n,
+\]</span> provided the sum on the right is not form of <span
+class="math inline">\(\infty-\infty\)</span>.</p>
+<h4 id="solution-4">Solution</h4>
+<p>Let <span class="math inline">\(s=\lim\limits_{n\to \infty}
+\sup(a_n+b_n),a=\lim\limits_{n\to\infty}\sup
+a_n,b=\lim\limits_{n\to\infty}\sup b_n\)</span>.</p>
+<p>If <span class="math inline">\(a=+\infty\)</span> or <span
+class="math inline">\(b=+\infty\)</span>, the inequality holds trivially
+immediately.</p>
+<p>If <span class="math inline">\(a&lt;+\infty\)</span> and <span
+class="math inline">\(b&lt;+\infty\)</span>. Then there exists a
+subsequence <span class="math inline">\(\{a_{n_k}+b_{n_k}\}\)</span>
+such that <span class="math display">\[
+s=\lim_{k\to \infty}(a_{n_k}+b_{n_k})
+\]</span></p>
+<ul>
+<li>If any of <span class="math inline">\(\{a_{n_k}\}\)</span> and <span
+class="math inline">\(\{b_{n_k}\}\)</span> converges, say <span
+class="math inline">\(\{a_{n_k}\}\)</span>, it's easily to show that
+<span class="math inline">\(\{b_{n_k}\}\)</span> converges by the
+equation <span
+class="math inline">\(b_{n_k}=(a_{n_k}+b_{n_k})-a_{n_k}\)</span>.
+Thus</li>
+</ul>
+<p><span class="math display">\[
+s=\lim_{k\to\infty}(a_{n_k}+b_{n_k})=\lim_{k\to\infty}a_{n_k}+\lim_{k\to\infty}b_{n_k}\leq
+a+b
+\]</span></p>
+<ul>
+<li>If both <span class="math inline">\(\{a_{n_k}\}\)</span> and <span
+class="math inline">\(\{b_{n_k}\}\)</span> diverge but <span
+class="math inline">\(\{a_{n_k}+b_{n_k}\}\)</span> converges, then we
+consider</li>
+</ul>
+<p><span class="math display">\[
+\alpha=\lim_{k\to\infty}\sup a_{n_k}\ \mathrm{and} \
+\beta=\lim_{k\to\infty} \sup b_{n_k}
+\]</span></p>
+<p>By definition 3.16 we have <span class="math display">\[
+\lim_{k\to\infty} \sup a_{n_k}\leq\lim_{n\to\infty}\sup a_n \
+\mathrm{and} \ \lim_{k\to\infty}\sup b_{n_k}\leq\lim_{n\to\infty} \sup
+b_n
+\]</span> so that <span class="math inline">\(\alpha\)</span> and <span
+class="math inline">\(\beta\)</span> are finite. By theorem 3.17(a)
+again, there exists a subsequence <span
+class="math inline">\(\{a_{n_{k_j}}\}\)</span> of the divergent sequence
+<span class="math inline">\(\{a_{n_k}\}\)</span> such that <span
+class="math display">\[
+\lim_{j\to\infty}a_{n_{k_j}}=\alpha
+\]</span> It's obvious that <span
+class="math inline">\(b_{n_{k_j}}\)</span> also converges since <span
+class="math display">\[
+s=\lim_{k\to\infty}(a_{n_k}+b_{n_k})=\lim_{j\to\infty}(a_{n_{k_j}}+b_{n_{k_j}})\Rightarrow\lim_{j\to\infty}b_{n_{k_j}}=s-\alpha
+\]</span> Therefore <span class="math display">\[
+s=\lim_{j\to\infty}(a_{n_{k_j}}+b_{n_{k_j}})\leq\alpha+\beta\leq a+b
+\]</span> This completes the proof.</p>
 ]]></content>
       <categories>
         <category>Principle of mathematical analysis</category>
       </categories>
       <tags>
-        <tag>Functions</tag>
-        <tag>Continuous</tag>
         <tag>Limits</tag>
+        <tag>Sequences</tag>
       </tags>
   </entry>
   <entry>
@@ -2525,8 +2529,8 @@ class="math inline">\(0&lt;|t-x|&lt;\delta_i\)</span>.</p>
         <category>Principle of mathematical analysis</category>
       </categories>
       <tags>
-        <tag>Differentiation</tag>
         <tag>Functions</tag>
+        <tag>Differentiation</tag>
       </tags>
   </entry>
   <entry>
@@ -2683,8 +2687,8 @@ g(x)=f&#39;(y)=0
         <category>Principle of mathematical analysis</category>
       </categories>
       <tags>
-        <tag>Differentiation</tag>
         <tag>Functions</tag>
+        <tag>Differentiation</tag>
       </tags>
   </entry>
   <entry>
@@ -2786,8 +2790,8 @@ f&#39;(e)=\dfrac{f(d)-f(a)}{d-a}
         <category>Principle of mathematical analysis</category>
       </categories>
       <tags>
-        <tag>Differentiation</tag>
         <tag>Functions</tag>
+        <tag>Differentiation</tag>
       </tags>
   </entry>
 </search>
